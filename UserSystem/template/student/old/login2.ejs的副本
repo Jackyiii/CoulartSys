@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="CoulartlabAPP">
+
+<head>
+    <%- include ("../component/meta_config"); -%>
+        <link rel="stylesheet" type="text/css" href="/css/login.css">
+        <link rel="stylesheet" type="text/css" href="/css/lib/animate.css-master/animate.css">
+        <script type="text/javascript" src="https://code.jquery.com/jquery.min.js"></script>
+        <script type="text/javascript" src="/scripts/path.js"></script>
+        <script type="text/javascript" src="/scripts/login.js"></script>
+        <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/angularjs/1.8.0/angular.min.js"></script>
+        <script type="text/javascript" src="/scripts/data.js"></script>
+        <script type="text/javascript" src="/scripts/path_controller.js"></script>
+</head>
+
+<body ng-controller="ctrl_2">
+    <div id="app">
+        <%- include ("../component/language"); -%>
+            <div id="background_container" class="animated pulse">
+                <img src="/src/background_img/bg_student.png">
+            </div>
+            <div>111111aaaaa</div>
+    </div>
+</body>
+
+</html>

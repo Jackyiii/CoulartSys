@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <%- include ("../component/meta_config"); -%>
+
+</head>
+
+<body style="position: relative; width: 100%;height: 100vh;overflow: hidden;">
+    <div id="uid" class="<%= uid %>"></div>
+    <div id="channel" class="<%= channel %>"></div>
+    <div id="room" class="<%= room %>"></div>
+
+    <%- include ("rtc_videos.ejs"); -%>
+        <%- include ("multi_teaching_tool.ejs"); -%>
+            <!-- <script src="/scripts/component/netless_controler.js"></script> -->
+            <script type="text/javascript" src="/scripts/component/classroom.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,33 @@
+@import url("/css/component/config/config_general.css");
+@media screen and (max-width: 600px) {
+    .source_exitClass {
+        width: 30px;
+        height: 30px;
+        position: absolute;
+        right: 2rem;
+        top: 1rem;
+        z-index: 9999;
+    }
+}
+
+@media screen and (min-width: 600px) and (max-width: 960px) {
+    .source_exitClass {
+        width: 40px;
+        height: 40px;
+        position: absolute;
+        right: 2rem;
+        top: 1rem;
+        z-index: 9999;
+    }
+}
+
+@media screen and (min-width: 960px) {
+    .source_exitClass {
+        width: 40px;
+        height: 40px;
+        position: absolute;
+        right: 3rem;
+        top: 1rem;
+        z-index: 9999;
+    }
+}

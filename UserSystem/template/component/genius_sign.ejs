@@ -1,0 +1,172 @@
+<link rel="canonical" href="https://letswrite.tw/custom-google-form/">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/skeleton/2.0.4/skeleton.min.css">
+<link rel="stylesheet" href="/css/admin/component/genius_sign_in.css">
+<main class="row">
+    <!-- form -->
+    <section class="six columns half form">
+        <h1 style="font-size: 20px;">新入职员工注册</h1>
+        <form>
+            <!-- 姓名 -->
+            <div class="input-group">
+                <label for="emploi_username">UserName</label>
+                <input class="u-full-width" type="text" name="emploi_username" placeholder="ex: YifanYUAN *名首字母大写+姓全大写，英文也是JeanGIRD" id="emploi_username">
+                <label for="emploi_first_name">名</label>
+                <input class="u-full-width" type="text" name="emploi_first_name" placeholder="ex: 丽蓉" id="emploi_first_name">
+                <label for="emploi_last_name">姓</label>
+                <input class="u-full-width" type="text" name="emploi_last_name" placeholder="ex: 赵" id="emploi_last_name">
+            </div>
+            <!-- 邮箱 -->
+            <div class="input-group">
+                <label for="emploi_mail">邮箱</label>
+                <input class="u-full-width" type="text" name="emploi_mail" placeholder="test@mailbox.com" id="emploi_mail">
+            </div>
+            <!-- 出生年月 -->
+            <div class="input-group row">
+                <label>出生日期</label>
+                <div class="three columns half form">
+                    <input type="text" id="emploi_year" name="emploi_year" placeholder="1890">
+                    <input type="text" id="emploi_month" name="emploi_month" placeholder="12">
+                    <input type="text" id="emploi_day" name="emploi_day" placeholder="30">
+                </div>
+            </div>
+            <!-- 性別 -->
+            <div class="input-group">
+                <label>姓別</label>
+                <div class="radio-group row">
+                    <!-- 男性 -->
+                    <div class="four columns">
+                        <input type="radio" id="male" name="sex_radio" value="male" checked>
+                        <label for="male">男性</label>
+                    </div>
+                    <!-- 女性 -->
+                    <div class="four columns">
+                        <input type="radio" id="female" name="sex_radio" value="female">
+                        <label for="female">女性</label>
+                    </div>
+                    <!-- 其他 -->
+                    <div class="four columns">
+                        <input type="radio" id="other" name="sex_radio" value="other">
+                        <label for="other">其他</label>
+                    </div>
+                </div>
+            </div>
+            <!-- 邮箱 -->
+            <div class="input-group">
+                <label>联系方式</label>
+                <label for="emploi_tel">电话</label>
+                <input class="u-full-width" type="text" name="emploi_tel" placeholder="+33 782006491" id="emploi_tel">
+                <label for="emploi_contact_other">其他</label>
+                <input class="u-full-width" type="text" name="emploi_contact_other" placeholder="ex: wechat: feifei001" id="emploi_contact_other">
+            </div>
+
+            <!-- 学习经历 -->
+            <div class="input-group">
+                <label for="education_select">最高学历</label>
+                <select class="u-full-width" id="education_select">
+                        <option value="0" value="0" selected disabled>请选择</option>
+                        <option value="博士">博士</option>
+                        <option value="硕士">硕士</option>
+                        <option value="本科">本科</option>
+                        <option value="商学院">商学院</option>
+                        <option value="工程师">工程师</option>
+                        <option value="大专 / BTS">大专 / BTS</option>
+                        <option value="高中">高中</option>
+                        <option value="中专">中专</option>
+                    </select>
+            </div>
+
+            <div class="input-group">
+                <label>毕业院校</label>
+                <label for="emploi_diplome">最高毕业院校</label>
+                <input class="u-full-width" type="text" name="emploi_diplome" placeholder="巴黎一大" id="emploi_diplome">
+                <label for="emploi_diplomeOther">其他院校</label>
+                <input class="u-full-width" type="text" name="emploi_diplomeOther" placeholder="双学位:巴黎二大" id="emploi_diplomeOther">
+            </div>
+            <!-- 学习经历 -->
+            <div class="input-group">
+                <label for="post_select">岗位</label>
+                <select class="u-full-width" id="post_select">
+                        <option value="0" value="0" selected disabled>请选择</option>
+                        <option value="课程研发">课程研发</option>
+                        <option value="谷乐合伙人">谷乐合伙人</option>
+                        <option value="金牌教师">金牌教师</option>
+                        <option value="Lv3教师">Lv3教师</option>
+                        <option value="Lv2教师">Lv2教师</option>
+                        <option value="Lv1教师">Lv1教师</option>
+                        <option value="实习教师">实习教师</option>
+                    </select>
+            </div>
+            <div class="input-group">
+                <label for="post_select_2">岗位</label>
+                <select class="u-full-width" id="post_select_2">
+                        <option value="0" value="0" selected disabled>请选择</option>
+                        <option value="校区校长">校区校长</option>
+                        <option value="课程班主任">课程班主任</option>
+                        <option value="正式班主任">正式班主任</option>
+                        <option value="实习班主任">实习班主任</option>
+                    </select>
+            </div>
+            <div class="input-group">
+                <label for="resident_country">居住国家</label>
+                <select class="u-full-width" id="resident_country">
+                        <option value="0" value="0" selected disabled>请选择</option>
+                        <option value="法国">法国</option>
+                        <option value="中国">中国</option>
+                        <option value="美国">美国</option>
+                        <option value="德国">德国</option>
+                        <option value="英国">英国</option>
+                        <option value="澳大利亚">澳大利亚</option>
+                        <option value="加拿大">加拿大</option>
+                        <option value="日本">日本</option>
+                        <option value="韩国">韩国</option>
+                        <option value="意大利">意大利</option>
+                        <option value="其他">其他</option>
+                    </select>
+            </div>
+            <!-- 居住地址-->
+            <div class="input-group">
+                <label for="addr_resident">居住地址</label>
+                <input class="u-full-width" type="text" name="addr_resident" placeholder="ex: 8 Place Francois II,44200,Nantes" id="addr_resident">
+            </div>
+
+            <div class="input-group">
+                <label for="emploi_en">英文</label>
+                <input class="u-full-width" type="text" name="emploi_en" placeholder="ex: 英文交流正常 TOIEC990" id="emploi_en">
+                <label for="emploi_fr">法语</label>
+                <input class="u-full-width" type="text" name="emploi_fr" placeholder="ex: 英文交流正常 DALF-C" id="emploi_fr">
+                <label for="emploi_ch">中文</label>
+                <input class="u-full-width" type="text" name="emploi_ch" placeholder="ex: 母语" id="emploi_ch">
+            </div>
+            <!-- 银行信息-->
+            <div class="input-group">
+                <label for="bank_infos">银行信息</label>
+                <select class="u-full-width" id="bank_infos">
+                        <option value="0" value="0" selected disabled>请选择</option>
+                        <option value="银行转账">银行转账</option>
+                        <option value="Paypal">Paypal</option>
+                        <option value="Wechat">Wechat</option>
+                        <option value="支付宝">支付宝</option>
+                        <option value="其他">其他</option>
+                    </select>
+                <label for="emploi_compte">账户</label>
+                <input class="u-full-width" type="text" name="emploi_compte" placeholder="IBAN/papal账户../ ex:FR792222222222" id="emploi_compte">
+                <label for="emploi_compte_name">账户姓名</label>
+                <input class="u-full-width" type="text" name="emploi_compte_name" placeholder="ex:fei/FEI" id="emploi_compte_name">
+            </div>
+            <!-- 居住地址-->
+            <div class="input-group">
+                <label for="remark">备注</label>
+                <textarea class="u-full-width" id="remark"></textarea>
+            </div>
+            <div class="input-group">
+                <label>紧急联系人</label>
+                <label for="exigence_name">紧急联系人名字</label>
+                <input class="u-full-width" type="text" name="exigence_name" placeholder="ex:fei/feifei" id="exigence_name">
+                <label for="exigence_tel">紧急联系人电话</label>
+                <input class="u-full-width" type="text" name="exigence_tel" placeholder="ex:+33 782006494" id="exigence_tel">
+            </div>
+            <button type="button" id="submit_emploi" class="button-primary u-full-width">注册</button>
+        </form>
+    </section>
+</main>
+<script type="text/javascript" src="/scripts/admin/component/genius_sign_in.js"></script>

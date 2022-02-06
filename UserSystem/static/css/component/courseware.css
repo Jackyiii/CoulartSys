@@ -1,0 +1,42 @@
+@import url("/css/component/config/config_general.css");
+@media screen and (max-width: 600px) {
+    #scene_courseware {
+        width: 150px;
+        height: 150px;
+        position: absolute;
+        right: 0px;
+        bottom: 0px;
+        /* border: 1px solid orange; */
+        /* background-color: black; */
+        z-index: 4;
+        background-size: 100%;
+    }
+}
+
+@media screen and (min-width: 600px) and (max-width: 960px) {
+    #scene_courseware {
+        width: 150px;
+        height: 150px;
+        position: absolute;
+        right: 0px;
+        bottom: 0px;
+        /* border: 1px solid orange; */
+        /* background-color: black; */
+        z-index: 4;
+        background-size: 100%;
+    }
+}
+
+@media screen and (min-width: 960px) {
+    #scene_courseware {
+        width: 150px;
+        height: 150px;
+        position: absolute;
+        right: 0px;
+        bottom: 0px;
+        /* border: 1px solid orange; */
+        /* background-color: black; */
+        z-index: 4;
+        background-size: 100%;
+    }
+}

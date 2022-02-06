@@ -1,0 +1,177 @@
+<link rel="canonical" href="https://letswrite.tw/custom-google-form/">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/skeleton/2.0.4/skeleton.min.css">
+<link rel="stylesheet" href="/css/admin/component/student_sign_in.css">
+<main class="row">
+    <!-- form -->
+    <section class="six columns half form">
+        <h1 style="font-size: 20px;">小朋友注册</h1>
+        <form>
+            <!-- 姓名 -->
+            <div class="input-group">
+                <label for="student_username">UserName</label>
+                <input class="u-full-width" type="text" name="student_username" placeholder="ex: YifanYUAN *名首字母大写+姓全大写，英文也是JeanGIRD" id="student_username">
+                <label for="student_first_name">名</label>
+                <input class="u-full-width" type="text" name="student_first_name" placeholder="ex: 怡然" id="student_first_name">
+                <label for="student_last_name">姓</label>
+                <input class="u-full-width" type="text" name="estudent_last_name" placeholder="ex: 朱" id="student_last_name">
+            </div>
+            <!-- 邮箱 -->
+            <div class="input-group">
+                <label for="student_mail">邮箱</label>
+                <input class="u-full-width" type="text" name="student_mail" placeholder="test@mailbox.com" id="student_mail">
+            </div>
+            <!-- 出生年月 -->
+            <div class="input-group row">
+                <label>出生日期</label>
+                <div class="three columns half form">
+                    <input type="text" id="student_year" name="student_year" placeholder="1890">
+                    <input type="text" id="student_month" name="student_month" placeholder="12">
+                    <input type="text" id="student_day" name="student_day" placeholder="30">
+                    <input type="text" id="student_age" name="student_age" placeholder="7岁">
+                </div>
+            </div>
+            <!-- 性別 -->
+            <div class="input-group">
+                <label>姓別</label>
+                <div class="radio-group row">
+                    <!-- 男性 -->
+                    <div class="four columns">
+                        <input type="radio" id="male" name="sex_radio" value="male" checked>
+                        <label for="male">男性</label>
+                    </div>
+                    <!-- 女性 -->
+                    <div class="four columns">
+                        <input type="radio" id="female" name="sex_radio" value="female">
+                        <label for="female">女性</label>
+                    </div>
+                    <!-- 其他 -->
+                    <div class="four columns">
+                        <input type="radio" id="other" name="sex_radio" value="other">
+                        <label for="other">其他</label>
+                    </div>
+                </div>
+            </div>
+            <!-- 邮箱 -->
+            <div class="input-group">
+                <label>联系方式</label>
+                <label for="student_tel">电话</label>
+                <input class="u-full-width" type="text" name="student_tel" placeholder="+33 782006491" id="student_tel">
+                <label for="student_contact_other">其他</label>
+                <input class="u-full-width" type="text" name="student_contact_other" placeholder="ex: wechat: feifei001" id="student_contact_other">
+            </div>
+            <div class="input-group">
+                <label for="student_en">英文</label>
+                <input class="u-full-width" type="text" name="student_en" placeholder="ex: 英文优先" id="student_en">
+                <label for="student_fr">法语</label>
+                <input class="u-full-width" type="text" name="student_fr" placeholder="ex: 可以学学 空代表无此备注" id="student_fr">
+                <label for="student_ch">中文</label>
+                <input class="u-full-width" type="text" name="student_ch" placeholder="ex: 想尝试中文" id="student_ch">
+            </div>
+            <!-- 学习经历 -->
+            <div class="input-group">
+                <label for="student_education_select">绘画基础</label>
+                <select class="u-full-width" id="student_education_select">
+                        <option value="0" value="0" selected disabled>请选择</option>
+                        <option value="专业院校">专业院校</option>
+                        <option value="5年">5年</option>
+                        <option value="3-4年">3-4年</option>
+                        <option value="2年">2年</option>
+                        <option value="1年">1年</option>
+                        <option value="0基础">0基础</option>
+                    </select>
+            </div>
+            <!-- 学习经历 -->
+            <div class="input-group">
+                <label for="student_character">孩子性格</label>
+                <select class="u-full-width" id="student_character">
+                        <option value="0" value="0" selected disabled>请选择</option>
+                        <option value="内向">内向</option>
+                        <option value="外向">外向</option>
+                        <option value="慢热">慢热</option>
+                        <option value="害羞">害羞</option>
+                        <option value="安静">安静</option>
+                        <option value="活泼">活泼</option>
+                        <option value="好动">好动</option>
+                    </select>
+            </div>
+
+            <div class="input-group">
+                <label for="student_resident_country">居住国家</label>
+                <select class="u-full-width" id="student_resident_country">
+                        <option value="0" value="0" selected disabled>请选择</option>
+                        <option value="法国">法国</option>
+                        <option value="中国">中国</option>
+                        <option value="美国">美国</option>
+                        <option value="德国">德国</option>
+                        <option value="英国">英国</option>
+                        <option value="澳大利亚">澳大利亚</option>
+                        <option value="加拿大">加拿大</option>
+                        <option value="日本">日本</option>
+                        <option value="韩国">韩国</option>
+                        <option value="意大利">意大利</option>
+                        <option value="其他">其他</option>
+                    </select>
+                <label for="zone_time">时区</label>
+                <select class="u-full-width" id="zone_time">
+                        <option value="0" value="0" selected disabled>请选择</option>
+                        <option value="法国">法国</option>
+                        <option value="中国">中国</option>
+                        <option value="美国东部">美国东部</option>
+                        <option value="美国中部">美国中部</option>
+                        <option value="美国太平洋">美国太平洋</option>
+                        <option value="美国山地地区">美国山地地区</option>
+                        <option value="英国">英国</option>
+                        <option value="澳大利亚">澳大利亚</option>
+                        <option value="其他">其他</option>
+                    </select>
+            </div>
+            <div class="input-group">
+                <label for="student_point_interest">兴趣点</label>
+                <textarea class="u-full-width" id="student_point_interest" placeholder="闪电, 飞机, 大象, 小仙女, 魔兽世界"></textarea>
+            </div>
+            <!-- 居住地址-->
+            <div class="input-group">
+                <label for="student_addr_resident">居住地址</label>
+                <input class="u-full-width" type="text" name="student_addr_resident" placeholder="ex: 8 Place Francois II,44200,Nantes" id="student_addr_resident">
+            </div>
+
+            <div class="input-group">
+                <label for="remark">备注</label>
+                <textarea class="u-full-width" id="remark"></textarea>
+            </div>
+            <div class="input-group">
+                <label>监护人信息</label>
+                <label for="guarder_name">监护人名字</label>
+                <input class="u-full-width" type="text" name="guarder_name" placeholder="ex:fei/feifei" id="guarder_name">
+                <label for="student_relation">是孩子的</label>
+                <select class="u-full-width" id="student_relation">
+                        <option value="0" value="0" selected disabled>请选择</option>
+                        <option value="母亲">母亲</option>
+                        <option value="父亲">父亲</option>
+                        <option value="舅舅">舅舅</option>
+                        <option value="舅妈">舅妈</option>
+                        <option value="大姑">大姑</option>
+                        <option value="大姨">大姨</option>
+                        <option value="大爷">大爷</option>
+                        <option value="爷爷">爷爷</option>
+                        <option value="奶奶">奶奶</option>
+                        <option value="姥姥">姥姥</option>
+                        <option value="姥爷">姥爷</option>
+                    </select>
+            </div>
+            <div class="input-group">
+                <label>监护人联系方式</label>
+                <label for="guarder_mail">监护人邮箱</label>
+                <input class="u-full-width" type="text" name="guarder_mail" placeholder="ex: test@gmail.com" id="guarder_mail">
+                <label for="guarder_tel">监护人电话</label>
+                <input class="u-full-width" type="text" name="guarder_tel" placeholder="ex: 072334353" id="guarder_tel">
+                <label for="guarder_wechat">监护人微信</label>
+                <input class="u-full-width" type="text" name="guarder_wechat" placeholder="ex: wechat:234ewerf" id="guarder_wechat">
+                <label for="guarder_facebook">监护人facebook</label>
+                <input class="u-full-width" type="text" name="guarder_facebook" placeholder="ex: facebook:234ewerf" id="guarder_facebook">
+            </div>
+            <button type="button" id="submit_student" class="button-primary u-full-width">注册</button>
+        </form>
+    </section>
+</main>
+<script type="text/javascript" src="/scripts/admin/component/student_sign_in.js"></script>

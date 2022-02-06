@@ -1,0 +1,186 @@
+/* Re_nouvel_style */
+
+body,
+ul,
+p,
+h1,
+h2,
+h3,
+h4,
+dl,
+dd,
+form,
+input,
+textarea,
+select {
+    padding: 0;
+    margin: 0;
+    font-family: Arial;
+}
+
+li {
+    list-style: none;
+}
+
+img {
+    border: none;
+}
+
+a {
+    text-decoration: none;
+    color: black;
+}
+
+input {
+    -webkit-box-shadow: 0 0 0px 1000px white inset;
+    outline-color: invert;
+    outline-color: invert;
+    outline-style: none;
+    outline-width: 0px;
+    border: none;
+    border-style: none;
+    text-shadow: none;
+    -webkit-appearance: none;
+    -webkit-user-select: text;
+    outline-color: transparent;
+    box-shadow: none;
+}
+
+html {
+    box-sizing: border-box;
+}
+
+body {
+    width: 100%;
+    overflow-x: hidden;
+}
+
+*,
+*:after,
+*:before {
+    box-sizing: inherit;
+}
+
+img {
+    width: 100%;
+}
+
+
+/* clear box */
+
+.clear:before,
+.clear:after {
+    content: " ";
+    display: table;
+}
+
+.clear:after {
+    clear: both;
+}
+
+*:focus {
+    outline: none;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+@media screen and (max-width: 600px) {
+    #contact_nous {
+        color: white;
+        margin-top: 0.8rem;
+        color: #7577A3;
+        width: 70%;
+        margin-left: 15%;
+        margin-right: 15%;
+        text-align: center;
+    }
+    .contact_us_main {
+        margin-bottom: 10px;
+        font-size: 0.6rem;
+    }
+    .contact_us_tel {
+        font-size: 0.4rem;
+    }
+    #logo_footer {
+        width: 80%;
+        margin-left: 10%;
+        margin-right: 10%;
+    }
+    .logo_footer_img {
+        width: 100%;
+    }
+    #footer_personal {
+        margin-bottom: 1.5rem;
+        position: absolute;
+        left: 0px;
+        bottom: 0px;
+    }
+}
+
+@media screen and (min-width: 600px) and (max-width: 960px) {
+    #contact_nous {
+        color: white;
+        margin-top: 0.8rem;
+        color: #7577A3;
+        width: 70%;
+        margin-left: 15%;
+        margin-right: 15%;
+        text-align: center;
+    }
+    .contact_us_main {
+        margin-bottom: 10px;
+        font-size: 1rem;
+    }
+    .contact_us_tel {
+        font-size: 0.8rem;
+    }
+    #logo_footer {
+        width: 80%;
+        margin-left: 10%;
+        margin-right: 10%;
+    }
+    .logo_footer_img {
+        width: 100%;
+    }
+    #footer_personal {
+        margin-bottom: 1.5rem;
+        position: absolute;
+        left: 0px;
+        bottom: 0px;
+    }
+}
+
+@media screen and (min-width: 960px) {
+    #contact_nous {
+        color: white;
+        margin-top: 0.8rem;
+        color: #7577A3;
+        width: 70%;
+        margin-left: 15%;
+        margin-right: 15%;
+        text-align: center;
+    }
+    .contact_us_main {
+        margin-bottom: 10px;
+        font-size: 1rem;
+    }
+    .contact_us_tel {
+        font-size: 0.8rem;
+    }
+    #logo_footer {
+        width: 80%;
+        margin-left: 10%;
+        margin-right: 10%;
+    }
+    .logo_footer_img {
+        width: 100%;
+    }
+    #footer_personal {
+        margin-bottom: 1.5rem;
+        position: absolute;
+        left: 0px;
+        bottom: 0px;
+    }
+}

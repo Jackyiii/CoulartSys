@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <%- include ("../component/meta_config"); -%>
+        <link rel="stylesheet" type="text/css" href="/css/teacher/login_teacher.css">
+        <script type="text/javascript" src="/scripts/teacher/login_teacher.js"></script>
+</head>
+
+<body>
+    <%- include ("../component/fallback.ejs"); -%>
+        <script type="text/javascript">
+            fallbackController("teacher_login")
+        </script>
+        <div id="app">
+            <%- include ("../component/language"); -%>
+                <div id="background_container">
+                    <img class="imge_breath" src="/src/background_img/bg_teacher.png">
+                </div>
+                <div id="form_manager">
+                    <div id="role_info">
+                        <div id="title_role" class="trans_title animated bounceInDown">Teacher Login</div>
+                        <div id="role_container">
+                            <div id="roles_img_teacher" class="breathe_teacher  circular-portrait animated headShake">
+                                <img src="/src/background_img/teacher_background.png" class="circular-square">
+                            </div>
+                        </div>
+                    </div>
+                    <form action="/teacher/login" method="post">
+                        <div class="group">
+                            <input class="input_style" id="user_name_value" type="text" name="email" required>
+                            <span class="highlight"></span>
+                            <span class="bar"></span>
+                            <label class="trans_email">email</label>
+                        </div>
+                        <div class="group">
+                            <input class="input_style" id="channel_value" type="password" name="password" required>
+                            <span class="highlight"></span>
+                            <span class="bar"></span>
+                            <label class="trans_password">password</label>
+                        </div>
+                        <div id="btn_controller">
+                            <!-- <input class="btn_style" type="submit" value="注 册" /> -->
+                            <input id="login_controller" class="trans_login btn_style" type="submit" value="Login" />
+                        </div>
+                    </form>
+                    <%- include ("../component/forgot_password"); -%>
+                </div>
+        </div>
+</body>
+
+</html>

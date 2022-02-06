@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <%- include ("../component/meta_config"); -%>
+        <link rel="stylesheet" type="text/css" href="/css/index.css">
+        <script type="text/javascript" src="/scripts/student/student_index.js"></script>
+</head>
+
+<body>
+    <%- include ("../component/fallback.ejs"); -%>
+        <script type="text/javascript">
+            fallbackController("student_index")
+        </script>
+        <%- include ("../component/language"); -%>
+            <div id="nav">
+                <div id="profil">
+                    <div class="circular-portrait">
+                        <img id="profil_personal" src="" alt="">
+                    </div>
+                    <ul id="info_personal">
+                        <li class="name_user">
+                            <%=user["student_first_name"]+user["student_last_name"]%>
+                        </li>
+                        <li id="id_num">
+                            <%=user["uid"]%>
+                        </li>
+                        <li id="niveau" class="trans_profil_student">学生</li>
+                    </ul>
+                </div>
+                <ul id="list_menu">
+                    <li class="active_menu_personal menu_personal trans_my_class">我的课程</li>
+                    <li id="art_trace" class="menu_personal trans_my_art_pass">艺术成长道路</li>
+                    <li id="demande_conge" class="menu_personal trans_my_vocate">请假</li>
+                    <li id="demande_plainte" class="menu_personal trans_my_inform">投诉</li>
+
+                </ul>
+                <%- include ("../component/footer_main"); -%>
+            </div>
+            <div id="commingSoon" style="display:none;width: 100%;position: absolute;left: 0px;top: 0px;height: 100vh;z-index: 99999;background-color: rgba(6, 6, 6, 0.4)">
+                <img id="srcCommingSoon" src="" alt="" style="width: 90%;margin-left: 5%;margin-right: 5%;margin-top: 15%;">
+            </div>
+            <div>
+                <img id="background_personal" src="" alt="">
+            </div>
+            <%- include ("component/container_content_student"); -%>
+</body>
+
+</html>

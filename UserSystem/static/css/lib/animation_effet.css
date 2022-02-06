@@ -1,0 +1,72 @@
+.breathe_div {
+    text-align: center;
+    cursor: pointer;
+    margin: 150px auto;
+    box-shadow: 0 1px 2px rgba(241, 144, 87, 1);
+    overflow: hidden;
+    -webkit-animation-timing-function: ease-in-out;
+    -webkit-animation-name: breathe;
+    -webkit-animation-duration: 1500ms;
+    -webkit-animation-iteration-count: infinite;
+    -webkit-animation-direction: alternate;
+}
+
+@-webkit-keyframes breathe {
+    0% {
+        /* opacity: .4; */
+        box-shadow: 0 1px 2px rgba(241, 144, 87, 1), 0 1px 1px rgba(241, 144, 87, 1) inset;
+    }
+    100% {
+        /* opacity: 1; */
+        border: 1px solid rgba(241, 144, 87, 1);
+        box-shadow: 0 1px 30px rgba(241, 144, 87, 1), 0 1px 20px rgba(241, 144, 87, 1) inset;
+    }
+}
+
+.breathe_teacher {
+    text-align: center;
+    cursor: pointer;
+    margin: 150px auto;
+    box-shadow: 0 1px 2px #F6D372;
+    ;
+    overflow: hidden;
+    -webkit-animation-timing-function: ease-in-out;
+    -webkit-animation-name: breathe_teacher;
+    -webkit-animation-duration: 1500ms;
+    -webkit-animation-iteration-count: infinite;
+    -webkit-animation-direction: alternate;
+}
+
+@-webkit-keyframes breathe_teacher {
+    0% {
+        /* opacity: .4; */
+        box-shadow: 0 1px 2px #F6D372, 0 1px 1px#F6D372;
+        inset;
+    }
+    100% {
+        /* opacity: 1; */
+        border: 1px solid #F6D372;
+        ;
+        box-shadow: 0 1px 30px #F6D372, 0 1px 20px #F6D372 inset;
+    }
+}
+
+.imge_breath {
+    background-size: cover;
+    background-position: center-top;
+    background-position-x: 50%;
+    background-position-y: 0%;
+    -webkit-animation: zoomin 12s infinite linear;
+}
+
+@-webkit-keyframes zoomin {
+    0% {
+        -webkit-transform: scale(1);
+    }
+    50% {
+        -webkit-transform: scale(1.2);
+    }
+    100% {
+        -webkit-transform: scale(1);
+    }
+}

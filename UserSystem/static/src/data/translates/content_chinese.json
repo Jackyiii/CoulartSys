@@ -1,0 +1,35 @@
+[
+{
+	"student":"学生登录",
+	"teacher":"老师登录",
+	"assistant":"班主任登录",
+	"coulart_aller_1":"随便看看",
+	"coulart_aller_2":">>>通往谷乐艺术社区",
+	"tel_fr":"tel:+33 6 45 51 09 68",
+	"tel_ch":"tel:+86 150 6407 9056",
+	"path" : "final"
+},
+{
+	"student_login":"学 生 登 录",
+	"teacher_login":"老师登录",
+	"assistant_login":"班主任登录",
+	"input_email":"邮 箱",
+	"input_password":"密 码",
+	"btn_login":"登 录",
+	"btn_forgotpassword":">>>忘记密码<<<",
+	"btn_sign":"注 册",
+	"path" : "final"
+},
+{
+	"title":"欢迎来到谷乐艺术",
+	"path" : "final"
+},
+{
+	"special1Title":"国际视野",
+	"path" : "final"
+},
+{
+	"nav_btn_contact":"联系我们",
+	"path" : "final"
+}
+]

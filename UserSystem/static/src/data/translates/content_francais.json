@@ -1,0 +1,35 @@
+[
+{
+	"student":"etudant login",
+	"teacher":"ensigent login",
+	"assistant":"assistant login",
+	"coulart_aller_1":"voir partout",
+	"coulart_aller_2":">>>aller au coulart forum",
+	"tel_fr":"+33 6 45 51 09 68",
+	"tel_ch":"+86 150 6407 9056",
+	"path" : "final"
+},
+{
+	"student_login":"etudiant login",
+	"teacher_login":"ensignet login",
+	"assistant_login":"assistant login",
+	"input_email":"email",
+	"input_password":"password",
+	"btn_login":"login",
+	"btn_forgotpassword":">>>oublier le password<<<",
+	"btn_sign":"enregist",
+	"path" : "final"
+},
+{
+	"title":"欢迎来到谷乐艺术",
+	"path" : "final"
+},
+{
+	"special1Title":"国际视野",
+	"path" : "final"
+},
+{
+	"nav_btn_contact":"联系我们",
+	"path" : "final"
+}
+]

@@ -1,0 +1,120 @@
+<style>
+    #info {
+        position: absolute;
+        top: 40px;
+        right: 40px;
+        background-color: lightgray;
+        color: black;
+        padding: 25px 50px;
+        z-index: 20000;
+    }
+    
+    #container_tranform {
+        position: absolute;
+        top: 0px;
+        left: 0px;
+        z-index: 10000;
+        width: 100%;
+        height: 100%;
+    }
+    
+    #box {
+        z-index: -10;
+        position: absolute;
+        border: 1px solid red;
+        transform-origin: 0 0;
+        -webkit-transform-origin: 0 0;
+        -moz-transform-origin: 0 0;
+        -o-transform-origin: 0 0;
+    }
+    
+    #box img {
+        border: 1px solid green;
+        /*width: 150px;
+            height: 120px;*/
+    }
+    
+    .corner {
+        z-index: 99999;
+        position: absolute;
+        top: 0px;
+        left: 0px;
+        /* visibility: hidden; */
+    }
+    
+    #btn1,
+    #btn2,
+    #btn_finish,
+    #btn3,
+    #btn4 {
+        z-index: 20000;
+        position: absolute;
+    }
+    
+    #btn2 {
+        left: 800px;
+    }
+    
+    #btn_finish {
+        left: 0px;
+        bottom: 0px;
+        width: 20%;
+        padding-left: 2%;
+        padding-right: 2%;
+        padding-top: 1%;
+        padding-bottom: 1%;
+        font-size: 1.2rem;
+        color: white;
+        background-color: #ccc;
+        font-weight: bold;
+        text-align: center;
+        font-weight: bold;
+        border-radius: 0.8rem;
+        margin-left: 40%;
+        margin-right: 40%;
+        margin-bottom: 20%;
+    }
+    
+    #btn3 {
+        left: 400px;
+    }
+    
+    #btn4 {
+        left: 600px;
+    }
+    
+    #marker0,
+    #marker2,
+    #marker4,
+    #marker6 {
+        border: 2px solid white;
+        background-color: rgb(128, 0, 255);
+        border-radius: 50%;
+        color: white;
+        padding: 0.2rem;
+    }
+    
+    #container_tranform {
+        display: none;
+    }
+</style>
+<div id="info"></div>
+
+<!-- <button id="btn1">Start1</button> -->
+<div id="btn_finish">Finish</div>
+<button onclick="finishHandler()" id="btn2">Finish</button>
+<button onclick="correctHandler()" id="btn4">Correct</button>
+<button onclick="resetHandler()" id="btn3">Reset</button>
+
+<div id="container_tranform">
+    <!-- <div id="box_transform">
+        <img id='img' src="/test.png">
+    </div> -->
+    <div id="marker0" class="corner">TL</div>
+    <div id="marker2" class="corner">BL</div>
+    <div id="marker4" class="corner">TR</div>
+    <div id="marker6" class="corner">BR</div>
+</div>
+
+<script type="text/javascript" src="/scripts/component/multi_tool/libs/perspective-transform.min.js"></script>
+<!-- <script type="text/javascript" src="/scripts/component/multi_tool/trans_controller.js"></script> -->

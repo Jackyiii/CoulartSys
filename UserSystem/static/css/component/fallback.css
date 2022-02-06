@@ -1,0 +1,33 @@
+@import url("/css/component/config/config_general.css");
+@media screen and (max-width: 600px) {
+    .source_fallback {
+        width: 30px;
+        height: 30px;
+        position: absolute;
+        left: 2rem;
+        top: 1rem;
+        z-index: 1000;
+    }
+}
+
+@media screen and (min-width: 600px) and (max-width: 960px) {
+    .source_fallback {
+        width: 40px;
+        height: 40px;
+        position: absolute;
+        left: 2rem;
+        top: 1rem;
+        z-index: 1000;
+    }
+}
+
+@media screen and (min-width: 960px) {
+    .source_fallback {
+        width: 60px;
+        height: 60px;
+        position: absolute;
+        left: 3rem;
+        top: 1rem;
+        z-index: 1000;
+    }
+}

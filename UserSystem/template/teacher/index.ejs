@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <%- include ("../component/meta_config"); -%>
+        <link rel="stylesheet" type="text/css" href="/css/index.css">
+        <script type="text/javascript" src="/scripts/teacher/teacher_index.js"></script>
+</head>
+
+<body>
+    <%- include ("../component/language"); -%>
+        <%- include ("../component/fallback.ejs"); -%>
+            <script type="text/javascript">
+                fallbackController("teacher_index")
+            </script>
+            <div id="nav">
+                <div id="profil">
+                    <div class="circular-portrait">
+                        <img id="profil_personal" src="" alt="">
+                    </div>
+                    <ul id="info_personal">
+                        <li class="name_user">
+                            <%=user["emploi_name"]%>
+                        </li>
+                        <li id="id_num">
+                            <%=user["uid"]%>
+                        </li>
+                        <li id="niveau" class="trans_profil_teacher">
+                            <%=user["emploi_post_select"]%>
+                        </li>
+                    </ul>
+                </div>
+                <ul id="list_menu">
+                    <li class="active_menu_personal menu_personal trans_my_class">我的课程</li>
+                    <li class="menu_personal trans_waiting_for_evaluation">待评价</li>
+                    <li class="menu_personal trans_course_completed">已上课程</li>
+                    <li class="menu_personal trans_my_art_pass">艺术成长道路</li>
+                    <li class="menu_personal trans_my_vocate">请假</li>
+                    <li class="menu_personal trans_course_development">课程研发</li>
+                    <li class="menu_personal trans_my_salary">薪资情况</li>
+                </ul>
+                <%- include ("../component/footer_main"); -%>
+            </div>
+
+            <li>
+                <img id="background_personal" src="" alt="">
+            </li>
+            <%- include ("component/container_content_teacher"); -%>
+
+</body>
+
+</html>
+
+
+<!-- <script type="text/javascript">
+    window.onload = function() {
+        $(".circular-portrait").height($(".circular-portrait").width());
+        $("#profil_personal").attr("src", path.teacher_img);
+        $('#nav').css('background-image', path.nav_teacher);
+        $("#background_personal").attr('src', path.nav_teacher);
+
+        function SetScale(ele, target_ele, attribute, factor) {
+            if (attribute == "height") {
+                if ($(target_ele).height()) {
+                    let target_height = $(target_ele).height();
+                    $(ele).height(target_height - factor);
+                }
+            }
+        }
+    }
+</script> -->

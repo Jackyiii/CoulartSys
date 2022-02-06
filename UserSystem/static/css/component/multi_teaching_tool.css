@@ -1,0 +1,180 @@
+@import url("/css/component/config/config_general.css");
+@media screen and (max-width: 600px) {
+    #toolController {
+        position: absolute;
+        right: 0.6rem;
+        top: 16vh;
+        width: 12%;
+        padding-top: 1.8vh;
+        padding-bottom: 4vh;
+        padding-left: 0.6rem;
+        padding-right: 0.6rem;
+        box-shadow: rgba(0, 0, 0, 0.15) 0px 2px 8px;
+        border-radius: 0.6rem;
+        cursor: move;
+        display: block;
+        z-index: 3;
+    }
+    .list_tool_realTime {
+        width: 100%;
+        margin-top: 0.8vh;
+        margin-bottom: 0.8vh;
+    }
+    #drag {
+        margin-bottom: 2.2vh;
+        width: 80%;
+        margin-left: 10%;
+        margin-right: 10%;
+        border: 0.15rem solid #C1C1C1;
+        border-radius: 20px;
+    }
+    .button_courseware_ctroller_left,
+    .button_courseware_ctroller_right {
+        width: 60px;
+        height: 60px;
+        position: absolute;
+        top: 45vh;
+        z-index: 5;
+        /* display: none; */
+    }
+    #courseware_button {
+        display: none;
+    }
+    .button_courseware_ctroller_left {
+        left: 80px;
+    }
+    .button_courseware_ctroller_right {
+        right: 80px;
+    }
+    #award_controller {
+        width: 50%;
+        position: absolute;
+        margin-left: 25%;
+        margin-right: 25%;
+        margin-top: 30vh;
+        left: 0px;
+        top: 0px;
+        z-index: 6;
+        display: none;
+    }
+}
+
+@media screen and (min-width: 600px) and (max-width: 960px) {
+    #toolController {
+        position: absolute;
+        right: 0.6rem;
+        top: 16vh;
+        width: 8%;
+        padding-top: 1.8vh;
+        padding-bottom: 4vh;
+        padding-left: 0.6rem;
+        padding-right: 0.6rem;
+        box-shadow: rgba(0, 0, 0, 0.15) 0px 2px 8px;
+        border-radius: 0.6rem;
+        cursor: move;
+        display: block;
+        z-index: 3;
+    }
+    .list_tool_realTime {
+        width: 100%;
+        margin-top: 0.8vh;
+        margin-bottom: 0.8vh;
+    }
+    #drag {
+        margin-bottom: 2.2vh;
+        width: 80%;
+        margin-left: 10%;
+        margin-right: 10%;
+        border: 0.15rem solid #C1C1C1;
+        border-radius: 20px;
+    }
+    .button_courseware_ctroller_left,
+    .button_courseware_ctroller_right {
+        width: 60px;
+        height: 60px;
+        position: absolute;
+        top: 45vh;
+        z-index: 5;
+        /* display: none; */
+    }
+    #courseware_button {
+        display: none;
+    }
+    .button_courseware_ctroller_left {
+        left: 80px;
+    }
+    .button_courseware_ctroller_right {
+        right: 80px;
+    }
+    #award_controller {
+        width: 50%;
+        position: absolute;
+        margin-left: 25%;
+        margin-right: 25%;
+        margin-top: 30vh;
+        left: 0px;
+        top: 0px;
+        z-index: 6;
+        display: none;
+    }
+}
+
+@media screen and (min-width: 960px) {
+    #toolController {
+        position: absolute;
+        right: 0.6rem;
+        top: 16vh;
+        width: 5%;
+        padding-top: 1.8vh;
+        padding-bottom: 4vh;
+        padding-left: 0.6rem;
+        padding-right: 0.6rem;
+        box-shadow: rgba(0, 0, 0, 0.15) 0px 2px 8px;
+        border-radius: 0.6rem;
+        cursor: move;
+        display: block;
+        z-index: 3;
+    }
+    .list_tool_realTime {
+        width: 100%;
+        margin-top: 0.8vh;
+        margin-bottom: 0.8vh;
+    }
+    #drag {
+        margin-bottom: 2.2vh;
+        width: 80%;
+        margin-left: 10%;
+        margin-right: 10%;
+        border: 0.15rem solid #C1C1C1;
+        border-radius: 20px;
+    }
+    .button_courseware_ctroller_left,
+    .button_courseware_ctroller_right {
+        width: 60px;
+        height: 60px;
+        position: absolute;
+        top: 45vh;
+        z-index: 5;
+        /* display: none; */
+    }
+    #courseware_button {
+        display: none;
+    }
+    .button_courseware_ctroller_left {
+        left: 80px;
+    }
+    .button_courseware_ctroller_right {
+        right: 80px;
+    }
+    #award_controller {
+        width: 50%;
+        position: absolute;
+        margin-left: 25%;
+        margin-right: 25%;
+        margin-top: 30vh;
+        left: 0px;
+        top: 0px;
+        z-index: 6;
+        display: none;
+    }
+}

@@ -1,0 +1,29 @@
+<link rel="stylesheet" type="text/css" href="/css/component/my_next_class.css">
+
+<ul id="content_next_class">
+    <li class="title_nextClass trans_my_next_class">下一节课程</li>
+    <li id="next_class">
+        <div id="timer_class">
+            <%= user.next_class %>
+        </div>
+        <div id="type_class" class="trans_class_type">正式课</div>
+        <ul class="clear">
+            <li class="courseware floatLeft">
+                <img id="thumbnail_courseware" src="https://storage.googleapis.com/coulartlab/static/courseware/%E7%BB%98%E6%9C%AC%E7%B3%BB%E5%88%97%E8%AF%BE/%E7%BB%98%E6%9C%AC1/9_%E6%88%91%E7%9A%84%E5%A4%A9%E5%A0%82/0.png" alt="">
+            </li>
+            <li class="course_intro floatLeft">
+                <div class="theme_course">
+                    <%= user.courseware_series %>
+                </div>
+                <div class="sous_theme_course">
+                    <%= user.courseware_lesson %>
+                </div>
+            </li>
+        </ul>
+        <div id="timer_to_class" class="trans_not_on_time">未到时间</div>
+    </li>
+</ul>
+<ul id="my_table_class">
+    <li class="title_nextClass trans_my_class_manager">我的课程</li>
+</ul>
+<script type="text/javascript" src="/scripts/student/my_next_class_student.js"></script>

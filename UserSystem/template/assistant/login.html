@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="CoulartlabAPP">
+<title>Coulart-lab International</title>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<meta name="author" content="ZEN YI,feiyi0727@gmail.com">
+<meta name="apple-mobile-web-app-title" content="Coulartlab">
+<meta name="description" content="COULEUR Artlab was founded in Paris, France in 2020. With the mission of «Sow the Art in the heart of every child», Integrate top international art resources such as France, Britain, and China, and unites education experts and child psychology experts.Joint pedagogy and child psychology experts. Create art courses and an international art platform that conforms to the law of children's growth.">
+<meta name="robots" content="index, follow">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.0, minimum-scale=1, user-scalable=0">
+<meta name="copyright" content="© CoulArtlab">
+<meta name="keywords" content="art, education, art-edu, culture, international, ecole">
+<meta name="location" content="Paris, FRANCE">
+<meta property="og:title" content="art, education, art-edu, culture, international, ecole">
+<meta property="og:site-name" content="art, education, art-edu, culture, international, ecole">
+<meta name="app-mobile-web-app-capable" content="yes">
+<meta name="format-detection" content="telephone=no">
+<link rel="stylesheet" type="text/css" href="/css/login_assistant.css">
+
+<head>
+    <title>Coulartlab</title>
+    <script type="text/javascript" src="https://code.jquery.com/jquery.min.js"></script>
+    <script type="text/javascript" src="/scripts/login.js"></script>
+    <!--     <script type="text/javascript" src="https://code.jquery.com/jquery.min.js"></script>
+    <script type="text/javascript" src="/scripts/path.js"></script>
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+    <script type="text/javascript" src="/scripts/index.js"></script>
+    <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/angularjs/1.8.0/angular.min.js"></script>
+    <script type="text/javascript" src="/scripts/data.js"></script>
+    <script type="text/javascript" src="/scripts/path_controller.js"></script> -->
+
+</head>
+
+<body ng-controller="ctrl_2">
+    <div id="app">
+        <div id="background">
+            <div id="container_imgs">
+                <img src="">
+            </div>
+        </div>
+        <div id="language">
+            <ul id="list_language">
+                <li class="language">
+                    <span>CH</span>
+                    <img src="">
+                </li>
+                <li>
+                    <span>EN</span>
+                    <img src="">
+                </li>
+                <li>
+                    <span>FR</span>
+                    <img src="">
+                </li>
+            </ul>
+        </div>
+        <div id="form_manager">
+            <div id="role_info">
+                <div id="title_role">助 教 登 录</div>
+                <div id="roles_img" class="circular-portrait">
+                    <img src="/src/background_img/assistant_background.png" class="circular-square">
+                </div>
+            </div>
+            <form action="/student/login" method="post">
+                <div class="group">
+                    <input class="input_style" id="user_name_value" type="text" name="username" required>
+                    <span class="highlight"></span>
+                    <span class="bar"></span>
+                    <label>邮箱</label>
+                </div>
+                <div class="group">
+                    <input class="input_style" id="channel_value" type="password" name="password" required>
+                    <span class="highlight"></span>
+                    <span class="bar"></span>
+                    <label>密码</label>
+                </div>
+                <div id="btn_controller">
+                    <!-- <input class="btn_style" type="submit" value="注 册" /> -->
+                    <input class="btn_style" type="submit" value="登 录" />
+                </div>
+            </form>
+            <div id="forget_password">
+                <div>
+                    忘记密码
+                </div>
+            </div>
+        </div>
+</body>
+
+</html>

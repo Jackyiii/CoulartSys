@@ -1,0 +1,394 @@
+/* Re_nouvel_style */
+
+body,
+ul,
+p,
+h1,
+h2,
+h3,
+h4,
+dl,
+dd,
+form,
+input,
+textarea,
+select {
+    padding: 0;
+    margin: 0;
+    font-family: Arial;
+}
+
+li {
+    list-style: none;
+}
+
+img {
+    border: none;
+}
+
+a {
+    text-decoration: none;
+    color: black;
+}
+
+input {
+    -webkit-box-shadow: 0 0 0px 1000px white inset !important;
+    outline-color: invert;
+    outline-color: invert;
+    outline-style: none;
+    outline-width: 0px;
+    border: none;
+    border-style: none;
+    text-shadow: none;
+    -webkit-appearance: none;
+    -webkit-user-select: text;
+    outline-color: transparent;
+    box-shadow: none;
+}
+
+html {
+    box-sizing: border-box;
+    width: 100%;
+    overflow: hidden;
+    height: 100vh;
+}
+
+body {
+    width: 100%;
+}
+
+*,
+*:after,
+*:before {
+    box-sizing: inherit;
+}
+
+img {
+    width: 100%;
+}
+
+
+/* clear box */
+
+.clear:before,
+.clear:after {
+    content: " ";
+    display: table;
+}
+
+.clear:after {
+    clear: both;
+}
+
+.floatLeft {
+    float: left;
+}
+
+.floatRight {
+    float: right;
+}
+
+*:focus {
+    outline: none;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+
+/* style_css */
+
+@media screen and (max-width: 600px) {
+    #header_role {
+        width: 100%;
+        height: 8vh;
+    }
+    #login_student {
+        width: 100%;
+        height: 25vh;
+        background-color: #f19057;
+        position: relative;
+    }
+    #login_teacher {
+        width: 100%;
+        height: 25vh;
+        background-color: #f7d472;
+        position: relative;
+    }
+    #login_assistant {
+        width: 100%;
+        height: 25vh;
+        background-color: #e5897e;
+        position: relative;
+    }
+    #goto_coulart {
+        width: 100%;
+        height: 17vh;
+        background-color: #8687c1;
+        position: relative;
+    }
+    #language_manager {
+        /* width:40%; */
+        height: 10vh;
+        margin-right: 20px;
+    }
+    .lan_option {
+        width: auto;
+        filter: alpha(Opacity=30);
+        -moz-opacity: 0.3;
+        opacity: 0.3;
+        float: right;
+    }
+    #contact {
+        /* width: 25%; */
+        text-align: left;
+        font-size: 12px;
+        padding-top: 3vh;
+        padding-bottom: 3vh;
+        color: #8687c1;
+        line-height: 2vh;
+        margin-left: 3vw;
+    }
+    #ch_option,
+    #fr_option,
+    #en_option {
+        width: auto;
+        padding-top: 20px;
+        padding-bottom: 20px;
+        padding-left: 5px;
+        padding-right: 5px;
+    }
+    .lan_active {
+        filter: alpha(Opacity=100);
+        -moz-opacity: 1;
+        opacity: 1
+    }
+    .logo_header {
+        padding: 5px;
+        padding-left: 20px;
+    }
+    .logo_header img {
+        width: auto;
+    }
+    .login_title {
+        color: white;
+        font-size: 2rem;
+        position: absolute;
+        right: 0px;
+        margin-right: 75px;
+        line-height: 23vh;
+    }
+    .link_coulart {
+        padding-top: 3vh;
+        color: white;
+        font-size: 2rem;
+        position: absolute;
+        right: 0px;
+        margin-right: 75px;
+    }
+    .sous_title_coulart {
+        font-size: 0.8rem;
+    }
+    .img_role {
+        width: auto;
+        position: absolute;
+        left: 0px;
+    }
+}
+
+@media screen and (min-width: 600px) and (max-width: 960px) {
+    #header_role {
+        width: 100%;
+        height: 8vh;
+    }
+    #login_student {
+        width: 100%;
+        height: 25vh;
+        background-color: #f19057;
+        position: relative;
+    }
+    #login_teacher {
+        width: 100%;
+        height: 25vh;
+        background-color: #f7d472;
+        position: relative;
+    }
+    #login_assistant {
+        width: 100%;
+        height: 25vh;
+        background-color: #e5897e;
+        position: relative;
+    }
+    #goto_coulart {
+        width: 100%;
+        height: 17vh;
+        background-color: #8687c1;
+        position: relative;
+    }
+    #language_manager {
+        /* width:40%; */
+        height: 10vh;
+        margin-right: 20px;
+    }
+    .lan_option {
+        width: auto;
+        filter: alpha(Opacity=30);
+        -moz-opacity: 0.3;
+        opacity: 0.3;
+        float: right;
+    }
+    #contact {
+        /* width: 25%; */
+        text-align: left;
+        font-size: 12px;
+        padding-top: 3vh;
+        padding-bottom: 3vh;
+        color: #8687c1;
+        line-height: 2vh;
+        margin-left: 3vw;
+    }
+    #ch_option,
+    #fr_option,
+    #en_option {
+        width: auto;
+        padding-top: 20px;
+        padding-bottom: 20px;
+        padding-left: 5px;
+        padding-right: 5px;
+    }
+    .lan_active {
+        filter: alpha(Opacity=100);
+        -moz-opacity: 1;
+        opacity: 1
+    }
+    .logo_header {
+        padding: 5px;
+        padding-left: 20px;
+    }
+    .logo_header img {
+        width: auto;
+    }
+    .login_title {
+        color: white;
+        font-size: 2rem;
+        position: absolute;
+        right: 0px;
+        margin-right: 75px;
+        line-height: 23vh;
+    }
+    .link_coulart {
+        padding-top: 3vh;
+        color: white;
+        font-size: 2rem;
+        position: absolute;
+        right: 0px;
+        margin-right: 75px;
+    }
+    .sous_title_coulart {
+        font-size: 0.8rem;
+    }
+    .img_role {
+        width: auto;
+        position: absolute;
+        left: 0px;
+    }
+}
+
+@media screen and (min-width: 960px) {
+    #header_role {
+        width: 100%;
+        height: 8vh;
+    }
+    #login_student {
+        width: 100%;
+        height: 25vh;
+        background-color: #f19057;
+        position: relative;
+    }
+    #login_teacher {
+        width: 100%;
+        height: 25vh;
+        background-color: #f7d472;
+        position: relative;
+    }
+    #login_assistant {
+        width: 100%;
+        height: 25vh;
+        background-color: #e5897e;
+        position: relative;
+    }
+    #goto_coulart {
+        width: 100%;
+        height: 17vh;
+        background-color: #8687c1;
+        position: relative;
+    }
+    #language_manager {
+        /* width:40%; */
+        height: 10vh;
+        margin-right: 20px;
+    }
+    .lan_option {
+        width: auto;
+        filter: alpha(Opacity=30);
+        -moz-opacity: 0.3;
+        opacity: 0.3;
+        float: right;
+    }
+    #contact {
+        /* width: 25%; */
+        text-align: left;
+        font-size: 12px;
+        padding-top: 3vh;
+        padding-bottom: 3vh;
+        color: #8687c1;
+        line-height: 2vh;
+        margin-left: 3vw;
+    }
+    #ch_option,
+    #fr_option,
+    #en_option {
+        width: auto;
+        padding-top: 20px;
+        padding-bottom: 20px;
+        padding-left: 5px;
+        padding-right: 5px;
+    }
+    .lan_active {
+        filter: alpha(Opacity=100);
+        -moz-opacity: 1;
+        opacity: 1
+    }
+    .logo_header {
+        padding: 5px;
+        padding-left: 20px;
+    }
+    .logo_header img {
+        width: auto;
+    }
+    .login_title {
+        color: white;
+        font-size: 2rem;
+        position: absolute;
+        right: 0px;
+        margin-right: 75px;
+        line-height: 23vh;
+    }
+    .link_coulart {
+        padding-top: 3vh;
+        color: white;
+        font-size: 2rem;
+        position: absolute;
+        right: 0px;
+        margin-right: 75px;
+    }
+    .sous_title_coulart {
+        font-size: 0.8rem;
+    }
+    .img_role {
+        width: auto;
+        position: absolute;
+        left: 0px;
+    }
+}

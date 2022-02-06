@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title></title>
+    <meta name="viewport" content="width=device-width">
+    <link rel="stylesheet" type="text/css" href="/css/classroom.css">
+    <script type="text/javascript" src="https://code.jquery.com/jquery.min.js"></script>
+    <script type="text/javascript" src="/scripts/AgoraRTCSDK-3.3.0.js"></script>
+    <script type="text/javascript" src="https://unpkg.com/draggabilly@2.2.0/dist/draggabilly.pkgd.js"></script>
+    <!-- <script type="text/javascript" src="/js/my.js"></script> -->
+    <!-- <script type="text/javascript" src="/js/test.js"></script> -->
+    <script type="text/javascript" src="/scripts/path.js"></script>
+</head>
+
+<body style="position: relative; width: 100%;height: 100vh;">
+    <div id="me" class="smallVideo draggable active_click"></div>
+    <div id="remote-container" class="grandVideo draggable">
+    </div>
+    <div id="canvas-container" style="border:1px solid green;">
+
+    </div>
+    <script>
+        var me_container = document.querySelector("#me");
+        var remote_container = document.querySelector("#remote-container");
+        let $draggable = $('.draggable').draggabilly();
+        me_container.ondblclick = function() {
+            if ($("#me").hasClass("smallVideo")) {
+                $("#me").attr("class", "grandVideo");
+                $("#me").css('left', '0');
+                $("#me").css('top', '0');
+                $("#remote-container").attr("class", "smallVideo draggable");
+                $("#remote-container").css('left', '0');
+                $("#remote-container").css('top', '0');
+            } else {
+                let $draggable = $('.draggable').draggabilly();
+            }
+        }
+        remote_container.ondblclick = function() {
+            if ($("#remote-container").hasClass("smallVideo")) {
+                $("#remote-container").attr("class", "grandVideo");
+                $("#me").attr("class", "smallVideo draggable");
+                $("#remote-container").css('left', '0');
+                $("#remote-container").css('top', '0');
+                $("#me").css('left', '0');
+                $("#me").css('top', '0');
+            } else {
+                let $draggable = $('.draggable').draggabilly();
+            }
+        }
+
+        /**
+         * @name handleFail
+         * @param err - error thrown by any function
+         * @description Helper function to handle errors
+         */
+        let handleFail = function(err) {
+            console.log("Error : ", err);
+        };
+
+        // Queries the container in which the remote feeds belong
+        let remoteContainer = document.getElementById("remote-container");
+        let canvasContainer = document.getElementById("canvas-container");
+        /**
+         * @name addVideoStream
+         * @param streamId
+         * @description Helper function to add the video stream to "remote-container"
+         */
+        function addVideoStream(streamId) {
+            let streamDiv = document.createElement("div"); // Create a new div for every stream
+            streamDiv.id = streamId; // Assigning id to div
+            streamDiv.style.transform = "rotateY(180deg)"; // Takes care of lateral inversion (mirror image)
+            remoteContainer.appendChild(streamDiv); // Add new div to container
+        }
+        /**
+         * @name removeVideoStream
+         * @param evt - Remove event
+         * @description Helper function to remove the video stream from "remote-container"
+         */
+        function removeVideoStream(evt) {
+            let stream = evt.stream;
+            stream.stop();
+            let remDiv = document.getElementById(stream.getId());
+            remDiv.parentNode.removeChild(remDiv);
+            console.log("Remote stream is removed " + stream.getId());
+        }
+
+        function addCanvas(streamId) {
+            let canvas = document.createElement("canvas");
+            canvas.id = 'canvas' + streamId;
+            canvasContainer.appendChild(canvas);
+            let ctx = canvas.getContext('2d');
+            let video = document.getElementById(`video${streamId}`);
+
+            video.addEventListener('loadedmetadata', function() {
+                canvas.width = video.videoWidth;
+                canvas.height = video.videoHeight;
+            });
+
+            video.addEventListener('play', function() {
+                var $this = this; //cache
+                (function loop() {
+                    if (!$this.paused && !$this.ended) {
+                        ctx.drawImage($this, 0, 0);
+                        setTimeout(loop, 1000 / 30); // drawing at 30fps
+                    }
+                })();
+            }, 0);
+        }
+
+        // Client Setup
+        // Defines a client for RTC
+        let client = AgoraRTC.createClient({
+            mode: 'live',
+            codec: "h264"
+        });
+
+        // Client Setup
+        // Defines a client for Real Time Communication
+        client.init("cfa1560903554b69b61218c1872349c9", () => console.log("AgoraRTC client initialized"), handleFail);
+        let uid = <%= uid_teacher %>;
+        let channel = "<%= channel %>";
+        let token = "<%= token_teacher %>";
+        // The client joins the channel
+        client.join(token, channel, uid, (uid) => {
+
+            // Stream object associated with your web cam is initialized
+            let localStream = AgoraRTC.createStream({
+                streamID: uid,
+                audio: false,
+                video: true,
+                screen: false
+            });
+
+            // Associates the stream to the client
+            localStream.init(function() {
+
+                //Plays the localVideo
+                localStream.play('me');
+
+                //Publishes the stream to the channel
+                client.publish(localStream, handleFail);
+
+            }, handleFail);
+
+        }, handleFail);
+        //When a stream is added to a channel
+        client.on('stream-added', function(evt) {
+            client.subscribe(evt.stream, handleFail);
+        });
+        //When you subscribe to a stream
+        client.on('stream-subscribed', function(evt) {
+            let stream = evt.stream;
+            addVideoStream(stream.getId());
+            stream.play(stream.getId());
+            addCanvas(stream.getId());
+        });
+        //When a person is removed from the stream
+        client.on('stream-removed', removeVideoStream);
+        client.on('peer-leave', removeVideoStream);
+    </script>
+</body>
+
+
+</html>

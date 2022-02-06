@@ -1,0 +1,116 @@
+@import url("/css/component/login.css");
+input:focus~.highlight {
+    -webkit-animation: inputHighlighter 0.3s ease;
+    -moz-animation: inputHighlighter 0.3s ease;
+    animation: inputHighlighter 0.3s ease;
+}
+
+@-webkit-keyframes inputHighlighter {
+    from {
+        background: #AFA3EA;
+    }
+    to {
+        width: 0;
+        background: transparent;
+    }
+}
+
+@-moz-keyframes inputHighlighter {
+    from {
+        background: #AFA3EA;
+    }
+    to {
+        width: 0;
+        background: transparent;
+    }
+}
+
+@keyframes inputHighlighter {
+    from {
+        background: #AFA3EA;
+    }
+    to {
+        width: 0;
+        background: transparent;
+    }
+}
+
+input:focus {
+    outline: none;
+}
+
+#app {
+    background-color: #AFA3EA;
+}
+
+.circular-portrait {
+    border: 0.2rem solid #AFA3EA;
+}
+
+#sign_controller {
+    color: #AFA3EA;
+}
+
+#sign_controller:hover {
+    background-color: #AFA3EA;
+}
+
+input:focus~label,
+input:valid~label {
+    color: #AFA3EA;
+}
+
+.input_style {
+    border-bottom: 1px solid #AFA3EA;
+}
+
+.bar:before,
+.bar:after {
+    background: #AFA3EA;
+}
+
+
+/* @media screen and (max-width: 600px) {
+    #app {
+        background-color: #F6D372;
+    }
+    .circular-portrait {
+        border: 0.2rem solid #F6D372;
+    }
+    #sign_controller {
+        color: #F6D372;
+    }
+    #sign_controller:hover {
+        background-color: #F6D372;
+    }
+}
+
+@media screen and (min-width: 600px) and (max-width: 960px) {
+    #app {
+        background-color: #F6D372;
+    }
+    .circular-portrait {
+        border: 0.2rem solid #F6D372;
+    }
+    #sign_controller {
+        color: #F6D372;
+    }
+    #sign_controller:hover {
+        background-color: #F6D372;
+    }
+}
+
+@media screen and (min-width: 960px) {
+    #app {
+        background-color: #F6D372;
+    }
+    .circular-portrait {
+        border: 0.2rem solid #F6D372;
+    }
+    #sign_controller {
+        color: #F6D372;
+    }
+    #sign_controller:hover {
+        background-color: #F6D372;
+    }
+} */

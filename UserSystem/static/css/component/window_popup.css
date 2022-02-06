@@ -1,0 +1,523 @@
+@import url("/css/component/config/config_general.css");
+@media screen and (max-width: 600px) {
+    #window_popup {
+        width: 100%;
+        height: 100vh;
+        position: fixed;
+        left: 0px;
+        top: 0px;
+        background: rgba(0, 0, 0, 0.8);
+        z-index: 100001;
+        display: none;
+    }
+    #content_popup {
+        width: 80%;
+        margin-left: 10%;
+        margin-right: 10%;
+        position: absolute;
+        z-index: 100002;
+        background-color: white;
+        height: 85vh;
+        margin-top: 10%;
+    }
+    #content_pop_title {
+        width: 100%;
+        text-align: center;
+        font-weight: bold;
+        font-size: 1rem;
+        margin-top: 1.5rem;
+        margin-bottom: 2rem;
+        color: #FE9556;
+    }
+    #content_pop_reset_password {
+        width: 100%;
+        text-align: left;
+        font-weight: bold;
+        font-size: 0.8rem;
+        margin-top: 2rem;
+        margin-bottom: 2rem;
+        color: #FE9556;
+    }
+    #content_pop_form {
+        width: 60%;
+        margin-left: 20%;
+        margin-right: 20%;
+    }
+    .group_forgot {
+        position: relative;
+        margin-bottom: 2rem;
+    }
+    .input_forgot {
+        font-size: 18px;
+        padding: 6px 6px 6px 3px;
+        display: block;
+        width: 100%;
+        border: none;
+        border-bottom: 1px solid #FE9556;
+    }
+    .input_forgot:focus {
+        outline: none;
+    }
+    /* LABEL ======================================= */
+    .label_forgot {
+        color: #999;
+        font-size: 0.8rem;
+        font-weight: normal;
+        position: absolute;
+        pointer-events: none;
+        left: 5px;
+        top: 10px;
+        transition: 0.2s ease all;
+        -moz-transition: 0.2s ease all;
+        -webkit-transition: 0.2s ease all;
+    }
+    /* active state */
+    .input_forgot:focus~.label_forgot,
+    .input_forgot:valid~.label_forgot {
+        top: -10px;
+        font-size: 1rem;
+        color: #FE9556;
+    }
+    /* BOTTOM BARS ================================= */
+    .bar_forgot {
+        position: relative;
+        display: block;
+        width: 100%;
+    }
+    .bar_forgot:before,
+    .bar_forgot:after {
+        content: '';
+        height: 2px;
+        width: 0;
+        position: absolute;
+        background: #FE9556;
+        transition: 0.2s ease all;
+        -moz-transition: 0.2s ease all;
+        -webkit-transition: 0.2s ease all;
+    }
+    .bar_forgot:before {
+        left: 50%;
+    }
+    .bar_forgot:after {
+        right: 50%;
+    }
+    /* active state */
+    .input_forgot:focus~.bar_forgot:before,
+    .input_forgot:focus~.bar_forgot:after {
+        width: 50%;
+    }
+    /* HIGHLIGHTER ================================== */
+    .highlight_forgot {
+        position: absolute;
+        height: 40%;
+        width: 100px;
+        top: 25%;
+        left: 0;
+        pointer-events: none;
+        opacity: 0.5;
+    }
+    /* active state */
+    .input_forgot:focus~.highlight_forgot {
+        -webkit-animation: inputHighlighter 0.3s ease;
+        -moz-animation: inputHighlighter 0.3s ease;
+        animation: inputHighlighter 0.3s ease;
+    }
+    #forgot_change_password {
+        width: 70%;
+        margin-left: 15%;
+        margin-right: 15%;
+        font-size: 0.9rem;
+        margin-bottom: 1rem;
+    }
+    #forgot_cancel_password {
+        width: 70%;
+        margin-left: 15%;
+        margin-right: 15%;
+        background-color: #ccc;
+        font-size: 0.9rem;
+    }
+    #btn_forgot_change {
+        position: absolute;
+        bottom: 1.5rem;
+        width: 100%;
+        left: 0px;
+    }
+    /* ANIMATIONS ================ */
+    @-webkit-keyframes inputHighlighter {
+        from {
+            background: #FE9556;
+        }
+        to {
+            width: 0;
+            background: transparent;
+        }
+    }
+    @-moz-keyframes inputHighlighter {
+        from {
+            background: #FE9556;
+        }
+        to {
+            width: 0;
+            background: transparent;
+        }
+    }
+    @keyframes inputHighlighter {
+        from {
+            background: #FE9556;
+        }
+        to {
+            width: 0;
+            background: transparent;
+        }
+    }
+}
+
+@media screen and (min-width: 600px) and (max-width: 960px) {
+    #window_popup {
+        width: 100%;
+        height: 100vh;
+        position: fixed;
+        left: 0px;
+        top: 0px;
+        background: rgba(0, 0, 0, 0.8);
+        z-index: 100001;
+        display: none;
+    }
+    #content_popup {
+        width: 70%;
+        margin-left: 15%;
+        margin-right: 15%;
+        position: absolute;
+        z-index: 100002;
+        background-color: white;
+        height: 80vh;
+        margin-top: 10%;
+    }
+    #content_pop_title {
+        width: 100%;
+        text-align: center;
+        font-weight: bold;
+        font-size: 1.6rem;
+        margin-top: 3rem;
+        margin-bottom: 5rem;
+        color: #FE9556;
+    }
+    #content_pop_reset_password {
+        width: 100%;
+        text-align: left;
+        font-weight: bold;
+        font-size: 1rem;
+        margin-top: 5rem;
+        margin-bottom: 3rem;
+        color: #FE9556;
+    }
+    #content_pop_form {
+        width: 60%;
+        margin-left: 20%;
+        margin-right: 20%;
+    }
+    .group_forgot {
+        position: relative;
+        margin-bottom: 45px;
+    }
+    .input_forgot {
+        font-size: 18px;
+        padding: 10px 10px 10px 5px;
+        display: block;
+        width: 100%;
+        border: none;
+        border-bottom: 1px solid #FE9556;
+    }
+    .input_forgot:focus {
+        outline: none;
+    }
+    /* LABEL ======================================= */
+    .label_forgot {
+        color: #999;
+        font-size: 18px;
+        font-weight: normal;
+        position: absolute;
+        pointer-events: none;
+        left: 5px;
+        top: 10px;
+        transition: 0.2s ease all;
+        -moz-transition: 0.2s ease all;
+        -webkit-transition: 0.2s ease all;
+    }
+    /* active state */
+    .input_forgot:focus~.label_forgot,
+    .input_forgot:valid~.label_forgot {
+        top: -20px;
+        font-size: 14px;
+        color: #FE9556;
+    }
+    /* BOTTOM BARS ================================= */
+    .bar_forgot {
+        position: relative;
+        display: block;
+        width: 100%;
+    }
+    .bar_forgot:before,
+    .bar_forgot:after {
+        content: '';
+        height: 2px;
+        width: 0;
+        bottom: 1px;
+        position: absolute;
+        background: #FE9556;
+        transition: 0.2s ease all;
+        -moz-transition: 0.2s ease all;
+        -webkit-transition: 0.2s ease all;
+    }
+    .bar_forgot:before {
+        left: 50%;
+    }
+    .bar_forgot:after {
+        right: 50%;
+    }
+    /* active state */
+    .input_forgot:focus~.bar_forgot:before,
+    .input_forgot:focus~.bar_forgot:after {
+        width: 50%;
+    }
+    /* HIGHLIGHTER ================================== */
+    .highlight_forgot {
+        position: absolute;
+        height: 60%;
+        width: 100px;
+        top: 25%;
+        left: 0;
+        pointer-events: none;
+        opacity: 0.5;
+    }
+    /* active state */
+    .input_forgot:focus~.highlight_forgot {
+        -webkit-animation: inputHighlighter 0.3s ease;
+        -moz-animation: inputHighlighter 0.3s ease;
+        animation: inputHighlighter 0.3s ease;
+    }
+    #forgot_change_password {
+        width: 50%;
+        margin-left: 25%;
+        margin-right: 25%;
+    }
+    #forgot_cancel_password {
+        width: 50%;
+        margin-left: 25%;
+        margin-right: 25%;
+        background-color: #ccc;
+    }
+    #btn_forgot_change {
+        position: absolute;
+        bottom: 3rem;
+        width: 100%;
+        left: 0px;
+    }
+    /* ANIMATIONS ================ */
+    @-webkit-keyframes inputHighlighter {
+        from {
+            background: #FE9556;
+        }
+        to {
+            width: 0;
+            background: transparent;
+        }
+    }
+    @-moz-keyframes inputHighlighter {
+        from {
+            background: #FE9556;
+        }
+        to {
+            width: 0;
+            background: transparent;
+        }
+    }
+    @keyframes inputHighlighter {
+        from {
+            background: #FE9556;
+        }
+        to {
+            width: 0;
+            background: transparent;
+        }
+    }
+}
+
+@media screen and (min-width: 960px) {
+    #window_popup {
+        width: 100%;
+        height: 100vh;
+        position: fixed;
+        left: 0px;
+        top: 0px;
+        background: rgba(0, 0, 0, 0.8);
+        z-index: 100001;
+        display: none;
+    }
+    #content_popup {
+        width: 70%;
+        margin-left: 15%;
+        margin-right: 15%;
+        position: absolute;
+        z-index: 100002;
+        background-color: white;
+        height: 80vh;
+        margin-top: 10%;
+    }
+    #content_pop_title {
+        width: 100%;
+        text-align: center;
+        font-weight: bold;
+        font-size: 2.4rem;
+        margin-top: 3rem;
+        margin-bottom: 5rem;
+        color: #FE9556;
+    }
+    #content_pop_reset_password {
+        width: 100%;
+        text-align: left;
+        font-weight: bold;
+        font-size: 2rem;
+        margin-top: 5rem;
+        margin-bottom: 3rem;
+        color: #FE9556;
+    }
+    #content_pop_form {
+        width: 60%;
+        margin-left: 20%;
+        margin-right: 20%;
+    }
+    .group_forgot {
+        position: relative;
+        margin-bottom: 45px;
+    }
+    .input_forgot {
+        font-size: 2rem;
+        padding: 10px 10px 10px 5px;
+        display: block;
+        width: 100%;
+        border: none;
+        border-bottom: 1px solid #FE9556;
+    }
+    .input_forgot:focus {
+        outline: none;
+    }
+    /* LABEL ======================================= */
+    .label_forgot {
+        color: #999;
+        font-size: 2rem;
+        font-weight: normal;
+        position: absolute;
+        pointer-events: none;
+        left: 5px;
+        top: 10px;
+        transition: 0.2s ease all;
+        -moz-transition: 0.2s ease all;
+        -webkit-transition: 0.2s ease all;
+    }
+    /* active state */
+    .input_forgot:focus~.label_forgot,
+    .input_forgot:valid~.label_forgot {
+        top: -20px;
+        font-size: 1.8rem;
+        color: #FE9556;
+    }
+    /* BOTTOM BARS ================================= */
+    .bar_forgot {
+        position: relative;
+        display: block;
+        width: 100%;
+    }
+    .bar_forgot:before,
+    .bar_forgot:after {
+        content: '';
+        height: 2px;
+        width: 0;
+        bottom: 1px;
+        position: absolute;
+        background: #FE9556;
+        transition: 0.2s ease all;
+        -moz-transition: 0.2s ease all;
+        -webkit-transition: 0.2s ease all;
+    }
+    .bar_forgot:before {
+        left: 50%;
+    }
+    .bar_forgot:after {
+        right: 50%;
+    }
+    /* active state */
+    .input_forgot:focus~.bar_forgot:before,
+    .input_forgot:focus~.bar_forgot:after {
+        width: 50%;
+    }
+    /* HIGHLIGHTER ================================== */
+    .highlight_forgot {
+        position: absolute;
+        height: 60%;
+        width: 100px;
+        top: 25%;
+        left: 0;
+        pointer-events: none;
+        opacity: 0.5;
+    }
+    /* active state */
+    .input_forgot:focus~.highlight_forgot {
+        -webkit-animation: inputHighlighter 0.3s ease;
+        -moz-animation: inputHighlighter 0.3s ease;
+        animation: inputHighlighter 0.3s ease;
+    }
+    #forgot_change_password {
+        width: 50%;
+        margin-left: 25%;
+        margin-right: 25%;
+        font-size: 2rem;
+        padding-top: 1rem;
+        padding-bottom: 1rem;
+        height: 80px;
+    }
+    #forgot_cancel_password {
+        width: 50%;
+        margin-left: 25%;
+        margin-right: 25%;
+        background-color: #ccc;
+        font-size: 2rem;
+        padding-top: 1rem;
+        padding-bottom: 1rem;
+        height: 80px;
+    }
+    #btn_forgot_change {
+        position: absolute;
+        bottom: 3rem;
+        width: 100%;
+        left: 0px;
+    }
+    /* ANIMATIONS ================ */
+    @-webkit-keyframes inputHighlighter {
+        from {
+            background: #FE9556;
+        }
+        to {
+            width: 0;
+            background: transparent;
+        }
+    }
+    @-moz-keyframes inputHighlighter {
+        from {
+            background: #FE9556;
+        }
+        to {
+            width: 0;
+            background: transparent;
+        }
+    }
+    @keyframes inputHighlighter {
+        from {
+            background: #FE9556;
+        }
+        to {
+            width: 0;
+            background: transparent;
+        }
+    }
+}

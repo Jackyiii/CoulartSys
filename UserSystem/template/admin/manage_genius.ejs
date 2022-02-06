@@ -1,0 +1,105 @@
+<link rel="canonical" href="https://letswrite.tw/custom-google-form/">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/skeleton/2.0.4/skeleton.min.css">
+<link rel="stylesheet" href="/css/admin/component/manage_stu.css">
+<main class="row">
+    <section class="six columns half form">
+        <h1 style="font-size: 20px;">Genius管理系统</h1>
+        <form id="form_stu_manage">
+            <div class="input-group">
+                <label for="manage_genius_select">选择Genius</label>
+                <select class="u-full-width" id="manage_genius_select">
+                        <option value="0"  selected disabled>请选择</option>
+                        <% user_genius_list.forEach(function(item){%>
+                            <option value="<%=item.user %>"><%=item.user %></option>
+                        <% }) %>
+                    </select>
+            </div>
+        </form>
+    </section>
+    <section class="six columns half form">
+        <form id="look_manage_genius"></form>
+    </section>
+</main>
+<script>
+    document.getElementById("manage_genius_select").addEventListener("change", function() {
+        let getUsr = $('#manage_genius_select').val() || '未填写';
+        $.ajax({
+            type: "GET",
+            url: "/admin/manageGenius/getUser?user=" + getUsr,
+            success: function(data) {
+                $("#look_manage_genius").empty();
+                //姓名
+                $('#look_manage_genius').append(
+                    '<div class="input-group"><label for="get_user_infos_name">姓名</label><input class="u-full-width" type="text" name="get_user_infos_name" id="get_user_infos_name" readonly></div>'
+                );
+                //uid
+                $('#look_manage_genius').append(
+                    '<div class="input-group"><label for="get_user_infos_uid">user id</label><input class="u-full-width" type="text" name="get_user_infos_uid" id="get_user_infos_uid" readonly></div>'
+                );
+                //gender
+                $('#look_manage_genius').append(
+                    '<div class="input-group"><label for="get_user_infos_gender">性别</label><input class="u-full-width" type="text" name="get_user_infos_gender" id="get_user_infos_gender" readonly></div>'
+                );
+                //sudent email
+                $('#look_manage_genius').append(
+                    '<div class="input-group"><label for="get_user_infos_stu_email">Genius邮箱</label><input class="u-full-width" type="text" name="get_user_infos_stu_email" id="get_user_infos_stu_email" readonly></div>'
+                );
+                //sudent tel
+                $('#look_manage_genius').append(
+                    '<div class="input-group"><label for="get_user_infos_stu_tel">Genius电话</label><input class="u-full-width" type="text" name="get_user_infos_stu_tel" id="get_user_infos_stu_tel" readonly></div>'
+                );
+                //sudent resident country
+                $('#look_manage_genius').append(
+                    '<div class="input-group"><label for="get_user_infos_resident_country">居住国家</label><input class="u-full-width" type="text" name="get_user_infos_resident_country" id="get_user_infos_resident_country" readonly></div>'
+                );
+                //sudent birth
+                $('#look_manage_genius').append(
+                    '<div class="input-group"><label for="get_user_birth">出生年月</label><input class="u-full-width" type="text" name="get_user_birth" id="get_user_birth" readonly></div>'
+                );
+                //sudent language
+                $('#look_manage_genius').append(
+                    '<div class="input-group"><label for="get_user_language">Genius语言</label><textarea cols="50" name="get_user_language" id="get_user_language" readonly></textarea></div>'
+                );
+                //sudent addresse
+                $('#look_manage_genius').append(
+                    '<div class="input-group"><label for="get_user_addr">Genius居住地址</label><input class="u-full-width" type="text" name="get_user_addr" id="get_user_addr" readonly></div>'
+                );
+
+                //sudent diplome
+                $('#look_manage_genius').append(
+                    '<div class="input-group"><label for="get_user_diplome">Genius文凭</label><input class="u-full-width" type="text" name="get_user_diplome" id="get_user_diplome" readonly></div>'
+                );
+                //sudent poste
+                $('#look_manage_genius').append(
+                    '<div class="input-group"><label for="get_user_poste">Genius 职位</label><input class="u-full-width" type="text" name="get_user_poste" id="get_user_poste" readonly></div>'
+                );
+                //sudent bank
+                $('#look_manage_genius').append(
+                    '<div class="input-group"><label for="get_user_bank">Genius银行账户</label><textarea cols="50" name="get_user_bank" id="get_user_bank" readonly></textarea></div>'
+                );
+                //sudent bank
+                $('#look_manage_genius').append(
+                    '<div class="input-group"><label for="get_user_contact">Genius社交账户</label><input class="u-full-width" type="text" name="get_user_contact" id="get_user_contact" readonly></div>'
+                );
+                //sudent bank
+                $('#look_manage_genius').append(
+                    '<div class="input-group"><label for="get_user_exigence">Genius紧急联系人</label><input class="u-full-width" type="text" name="get_user_exigence" id="get_user_exigence" readonly></div>'
+                );
+                $("#get_user_infos_name").val(data.emploi_first_name + " " + data.emploi_last_name);
+                $("#get_user_infos_uid").val(data.uid);
+                $("#get_user_infos_gender").val(data.emploi_sex);
+                $("#get_user_infos_stu_email").val(data.emploi_mail);
+                $("#get_user_infos_stu_tel").val(data.emploi_contact_tel);
+                $("#get_user_infos_resident_country").val(data.emploi_resident_country);
+                $("#get_user_birth").val(data.emploi_birth_year + " / " + data.emploi_birth_month + " / " + data.emploi_birth_day);
+                $("#get_user_language").val("英文: " + data.emploi_en + '\n' + "法语:" + data.emploi_fr + '\n' + "中文:" + data.emploi_ch);
+                $("#get_user_addr").val(data.emploi_addr_resident);
+                $("#get_user_poste").val(data.emploi_post_select + " / " + data.emploi_post_select_2);
+                $("#get_user_bank").val(data.emploi_bank_infos + '\n' + data.emploi_compte + '\n' + data.emploi_emploi_compte_name + '\n' + data.emploi_remark);
+                $("#get_user_diplome").val(data.emploi_diplome + data.emploi_emploi_diplomeOther);
+                $("#get_user_contact").val(data.emploi_contact_other);
+                $("#get_user_exigence").val(data.emploi_exigence_name + " / " + data.emploi_exigence_tel);
+            }
+        });
+    });
+</script>

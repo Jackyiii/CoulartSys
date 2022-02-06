@@ -1,0 +1,83 @@
+.smallScreenTextStyle{
+  /*margin-top: 2.5rem;*/
+  /*text-align: center;*/
+  /*display: none;*/
+}
+.smallScreenTextStyle a{
+  color: #A0A6B6;
+  font-size: 1.5rem;
+  text-align: center;
+}
+#smallScrenMenu{
+  width: 40%;
+  height: 50vh;
+  background-color: white;
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+  position: absolute;
+  right: -10px;
+  top: 0px;
+  z-index: 1002;
+  padding-left: 5%;
+  padding-right: 5%;
+  text-align: center;
+  padding-top: 10rem;
+  display: none;
+}
+#postionMenuBurger{
+  position: absolute;
+  /*right: 12%;*/
+  z-index: 9002;
+  top:2px;
+  text-align: center;
+}
+#hamburger-icon {
+  width: 3rem;
+  height: 1.8rem;
+  position: relative;
+  display: block;
+/*  margin: 100px auto 1.8rem auto;*/
+}
+#hamburger-icon .line {
+  display: block;
+  background: white;
+  width: 2.2rem;
+  height: 0.3rem;
+  position: absolute;
+  left: 0;
+  border-radius: 4px;
+  transition: all 0.4s;
+  -webkit-transition: all 0.4s;
+  -moz-transition: all 0.4s;
+}
+#hamburger-icon .line.line-1 {
+  top: 0;
+}
+#hamburger-icon .line.line-2 {
+  top: 50%;
+}
+#hamburger-icon .line.line-3 {
+  top: 100%;
+}
+#hamburger-icon:hover .line-1, #hamburger-icon:focus .line-1 {
+  transform: translateY(-4px);
+  -webkit-transform: translateY(-4px);
+  -moz-transform: translateY(-4px);
+}
+#hamburger-icon:hover .line-3, #hamburger-icon:focus .line-3 {
+  transform: translateY(4px);
+  -webkit-transform: translateY(4px);
+  -moz-transform: translateY(4px);
+}
+#hamburger-icon.active .line-1 {
+  transform: translateY(0.9rem) translateX(0) rotate(45deg);
+  -webkit-transform: translateY(0.9rem) translateX(0) rotate(45deg);
+  -moz-transform: translateY(0.9rem) translateX(0) rotate(45deg);
+}
+#hamburger-icon.active .line-2 {
+  opacity: 0;
+}
+#hamburger-icon.active .line-3 {
+  transform: translateY(-0.9rem) translateX(0) rotate(-45deg);
+  -webkit-transform: translateY(-0.9rem) translateX(0) rotate(-45deg);
+  -moz-transform: translateY(-0.9rem) translateX(0) rotate(-45deg);
+}

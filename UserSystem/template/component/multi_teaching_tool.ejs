@@ -1,0 +1,51 @@
+<link rel="stylesheet" type="text/css" href="/css/component/multi_teaching_tool.css">
+<script src="https://sdk.netless.link/white-web-sdk/2.11.5.js"></script>
+<div id="whiteboard" style="width:100%;height:100vh;position: absolute;left: 0px;top: 0px;z-index: 3;"></div>
+<ul id="toolController">
+    <li id="drag"></li>
+    <li class="list_tool_realTime" id="look_same_realTime">
+        <img class="src_lookSame_real img_list_realTime" src="">
+    </li>
+    <li class="list_tool_realTime" id="pencil_realTime">
+        <img class="src_pencil_real img_list_realTime" src="">
+    </li>
+    <li class="list_tool_realTime" id="eraser_realTime">
+        <img class="src_eraser_real img_list_realTime" src="">
+    </li>
+    <li class="list_tool_realTime" id="transform_realTime">
+        <img class="src_transform_real img_list_realTime" src="">
+    </li>
+    <li class="list_tool_realTime" id="mirror_realTime">
+        <img class="src_mirror_real img_list_realTime" src="">
+    </li>
+    <li class="list_tool_realTime" id="award_realTime">
+        <img class="src_award_real img_list_realTime" src="">
+    </li>
+    <li class="list_tool_realTime" id="courseware_realTime">
+        <img class="src_courseware_real img_list_realTime" src="">
+    </li>
+    <li class="list_tool_realTime" id="mute_realTime">
+        <img class="src_mute_real img_list_realTime" src="">
+    </li>
+</ul>
+<!-- Tool of Courseware Component -->
+<div id="courseware_controller">
+    <%- include ("multi_tool/courseware.ejs"); -%>
+</div>
+<ul id="courseware_button">
+    <li class="button_courseware_ctroller_left">
+        <img src="" alt="" class="left_courseware">
+    </li>
+    <li class="button_courseware_ctroller_right">
+        <img src="" alt="" class="right_courseware">
+    </li>
+</ul>
+<!-- Tool of Palette Component -->
+<%- include ("multi_tool/color_picker.ejs"); -%>
+    <!-- Tool of Award Component -->
+    <div id="award_controller">
+        <img class="award_controller" src="" alt="">
+    </div>
+    <%- include ("multi_tool/regulate_camera.ejs"); -%>
+        <%- include ("multi_tool/transform_3d.ejs"); -%>
+            <script type="text/javascript" src="/scripts/component/netless/netless_controler.js"></script>

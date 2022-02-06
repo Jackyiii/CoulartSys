@@ -1,0 +1,33 @@
+<link rel="stylesheet" type="text/css" href="/css/component/my_next_class.css">
+
+<ul id="content_next_class">
+    <li class="title_nextClass trans_my_next_class">下一节课程</li>
+    <li id="next_class">
+        <div id="timer_class">
+            <%= user.next_class %>
+        </div>
+        <div id="type_class" class="trans_class_type">正式课</div>
+        <ul class="clear">
+            <li class="courseware floatLeft">
+                <img id="thumbnail_courseware" src=<%=user.src %> alt="">
+            </li>
+            <li class="course_intro floatLeft">
+                <div class="theme_course">
+                    <%= user.courseware_series %>
+                </div>
+                <div class="sous_theme_course">
+                    <%= user.courseware_lesson %>
+                </div>
+                <div class="my_target_child">
+                    <%= user.target_user %>
+                </div>
+            </li>
+        </ul>
+        <div id="timer_to_class" class="trans_not_on_time">未到时间</div>
+    </li>
+</ul>
+
+<ul id="my_table_class">
+    <li class="title_nextClass trans_my_class_manager">我的课程</li>
+</ul>
+<script type="text/javascript" src="/scripts/teacher/my_next_class_teacher.js"></script>

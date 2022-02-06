@@ -1,0 +1,286 @@
+label {
+    color: #ccc;
+    font-size: 16px;
+    font-weight: normal;
+    position: absolute;
+    pointer-events: none;
+    left: 5px;
+    top: 10px;
+    transition: 0.2s ease all;
+    -moz-transition: 0.2s ease all;
+    -webkit-transition: 0.2s ease all;
+}
+
+@media screen and (max-width: 600px) {
+    input:focus~label,
+    input:valid~label {
+        top: -20px;
+        font-size: 12px;
+    }
+    .circular-portrait {
+        position: relative;
+        width: 24%;
+        margin-left: 38%;
+        margin-right: 38%;
+        height: 0px;
+        overflow: hidden;
+        border-radius: 50%;
+        margin-top: 10px;
+    }
+    .circular-portrait img {
+        width: 100%;
+        height: auto;
+    }
+    .group {
+        position: relative;
+        margin-bottom: 1.8rem;
+        margin-top: 1.8rem;
+        margin-left: 15%;
+        margin-right: 15%;
+    }
+    input {
+        -webkit-box-shadow: 0 0 0px 1000px white inset;
+        outline-color: invert;
+        outline-color: invert;
+        outline-style: none;
+        outline-width: 0px;
+        border: none;
+        border-style: none;
+        text-shadow: none;
+        -webkit-appearance: none;
+        -webkit-user-select: text;
+        outline-color: transparent;
+        box-shadow: none;
+    }
+    .input_style {
+        font-size: 1.2rem;
+        padding: 6px 6px 6px 6px;
+        display: block;
+        width: 100%;
+        border: none;
+        border-radius: 20px;
+        padding-left: 30px;
+    }
+    .group label {
+        padding-left: 30px;
+    }
+    .bar {
+        position: relative;
+        display: block;
+        width: 100%;
+    }
+    .bar:before,
+    .bar:after {
+        content: '';
+        height: 4px;
+        width: 0;
+        bottom: 1px;
+        position: absolute;
+        transition: 0.2s ease all;
+        -moz-transition: 0.2s ease all;
+        -webkit-transition: 0.2s ease all;
+        border-radius: 20px;
+    }
+    .bar:before {
+        left: 40%;
+    }
+    .bar:after {
+        right: 40%;
+    }
+    input:focus~.bar:before,
+    input:focus~.bar:after {
+        width: 50%;
+    }
+    .highlight {
+        position: absolute;
+        height: 60%;
+        width: 100%;
+        top: 25%;
+        left: 0;
+        pointer-events: none;
+        opacity: 0.5;
+    }
+}
+
+@media screen and (min-width: 600px) and (max-width: 960px) {
+    input:focus~label,
+    input:valid~label {
+        top: -20px;
+        font-size: 12px;
+    }
+    .circular-portrait {
+        position: relative;
+        width: 24%;
+        margin-left: 38%;
+        margin-right: 38%;
+        height: 0px;
+        overflow: hidden;
+        border-radius: 50%;
+        margin-top: 10px;
+    }
+    .circular-portrait img {
+        width: 100%;
+        height: auto;
+    }
+    .group {
+        position: relative;
+        margin-bottom: 2rem;
+        margin-top: 2rem;
+        margin-left: 15%;
+        margin-right: 15%;
+    }
+    input {
+        -webkit-box-shadow: 0 0 0px 1000px white inset;
+        outline-color: invert;
+        outline-color: invert;
+        outline-style: none;
+        outline-width: 0px;
+        border: none;
+        border-style: none;
+        text-shadow: none;
+        -webkit-appearance: none;
+        -webkit-user-select: text;
+        outline-color: transparent;
+        box-shadow: none;
+    }
+    .input_style {
+        font-size: 18px;
+        padding: 10px 10px 10px 5px;
+        display: block;
+        width: 100%;
+        border: none;
+        border-radius: 20px;
+        padding-left: 30px;
+    }
+    .group label {
+        padding-left: 30px;
+    }
+    .bar {
+        position: relative;
+        display: block;
+        width: 100%;
+    }
+    .bar:before,
+    .bar:after {
+        content: '';
+        height: 4px;
+        width: 0;
+        bottom: 1px;
+        position: absolute;
+        transition: 0.2s ease all;
+        -moz-transition: 0.2s ease all;
+        -webkit-transition: 0.2s ease all;
+        border-radius: 20px;
+    }
+    .bar:before {
+        left: 40%;
+    }
+    .bar:after {
+        right: 40%;
+    }
+    input:focus~.bar:before,
+    input:focus~.bar:after {
+        width: 50%;
+    }
+    .highlight {
+        position: absolute;
+        height: 60%;
+        width: 100%;
+        top: 25%;
+        left: 0;
+        pointer-events: none;
+        opacity: 0.5;
+    }
+}
+
+@media screen and (min-width: 960px) {
+    input:focus~label,
+    input:valid~label {
+        top: -2.4rem;
+        font-size: 1.4rem;
+    }
+    .circular-portrait {
+        position: relative;
+        width: 24%;
+        margin-left: 38%;
+        margin-right: 38%;
+        height: 0px;
+        overflow: hidden;
+        border-radius: 50%;
+        margin-top: 20px;
+    }
+    .circular-portrait img {
+        width: 100%;
+        height: auto;
+    }
+    .group {
+        position: relative;
+        margin-bottom: 3rem;
+        margin-top: 2rem;
+        margin-left: 15%;
+        margin-right: 15%;
+    }
+    input {
+        -webkit-box-shadow: 0 0 0px 1000px white inset;
+        outline-color: invert;
+        outline-color: invert;
+        outline-style: none;
+        outline-width: 0px;
+        border: none;
+        border-style: none;
+        text-shadow: none;
+        -webkit-appearance: none;
+        -webkit-user-select: text;
+        outline-color: transparent;
+        box-shadow: none;
+    }
+    .input_style {
+        font-size: 1.2rem;
+        padding: 12px 12px 12px 6px;
+        display: block;
+        width: 100%;
+        border: none;
+        border-radius: 30px;
+        padding-left: 30px;
+    }
+    .group label {
+        padding-left: 30px;
+        font-size: 1.4rem;
+    }
+    .bar {
+        position: relative;
+        display: block;
+        width: 100%;
+    }
+    .bar:before,
+    .bar:after {
+        content: '';
+        height: 4px;
+        width: 0;
+        bottom: 1px;
+        position: absolute;
+        transition: 0.2s ease all;
+        -moz-transition: 0.2s ease all;
+        -webkit-transition: 0.2s ease all;
+        border-radius: 20px;
+    }
+    .bar:before {
+        left: 40%;
+    }
+    .bar:after {
+        right: 40%;
+    }
+    input:focus~.bar:before,
+    input:focus~.bar:after {
+        width: 50%;
+    }
+    .highlight {
+        position: absolute;
+        height: 60%;
+        width: 100%;
+        top: 25%;
+        left: 0;
+        pointer-events: none;
+        opacity: 0.5;
+    }
+}

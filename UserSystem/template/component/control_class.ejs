@@ -1,0 +1,402 @@
+<link rel="canonical" href="https://letswrite.tw/custom-google-form/">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/skeleton/2.0.4/skeleton.min.css">
+<link rel="stylesheet" href="/css/admin/component/control_class.css">
+<main class="row">
+    <!-- form -->
+    <section class="six columns half form">
+        <h1 style="font-size: 20px;">学生排课系统</h1>
+        <form id="form_courseware">
+            <div class="input-group">
+                <label for="student_select">选择上课学生</label>
+                <select class="u-full-width" id="student_select">
+                        <option value="0"  selected disabled>请选择</option>
+                        <% user_student_list.forEach(function(item){%>
+                            <option value="<%=item.user %>"><%=item.user %></option>
+                        <% }) %>
+                    </select>
+            </div>
+
+            <div class="input-group">
+                <label for="teacher_select">选择上课老师</label>
+                <select style="margin-bottom:20px;" class="six columns half form" id="teacher_select" onchange="myFunction()">
+                        <option value="0"  selected disabled>请选择</option>
+                        <% user_teacher_list.forEach(function(item){%>
+                            <option value="<%=item.user %>"><%=item.user %></option>
+                        <% }) %>
+                    </select>
+            </div>
+            <ul id="schedule_teacher" style="margin-bottom:60px;" class="six columns half form">
+
+            </ul>
+            <div class="input-group">
+                <label for="series_select">选择课件</label>
+                <select style="margin-bottom:20px;" class="six columns half form" id="series_select">
+                        <option value="0"  selected disabled>请选择系列</option>
+                        <% data_courseware.forEach(function(item){%>
+                            <option value="<%=item %>"><%=item %></option>
+                        <% }) %>
+                </select>
+            </div>
+            <div class="input-group" id="type_level"></div>
+            <div class="input-group" id="type_set"></div>
+            <div class="input-group">
+                <label for="time_schedule">上课时间</label>
+                <input class="u-full-width" type="text" name="time_schedule" id="time_schedule" placeholder="ex:'2018/06/08 18:00:00'">
+                <label for="num_class">课时数量</label>
+                <input class="u-full-width" type="text" name="num_class" id="num_class" placeholder="ex:'1(单独1节)/12(1个stage每周定时)'">
+            </div>
+            <button type="button" id="submit_emploi" class="button-primary u-full-width">注册</button>
+        </form>
+    </section>
+</main>
+<script type="text/javascript" src="/scripts/libs/moment.js"></script>
+<script type="text/javascript" src="/scripts/libs/moment-timezone-with-data.js"></script>
+<script>
+    $(function() {
+        LoadCourse()
+        $('#submit_emploi').on('click', function() {
+            var student_select = $('#student_select').val() || '未填写';
+            var teacher_select = $('#teacher_select').val() || '未填写';
+            var format_schedule = $('#time_schedule').val() || '未填写';
+            var number_of_class = $('#num_class').val() || '未填写';
+            var list_course_local = [];
+            var list_course_france = [];
+            var zone_time_list = <%- JSON.stringify(zone_time_list)%>;
+            var str_get_country = zone_time_list[student_select];
+            var second_local_time = moment(new Date(format_schedule));
+            list_course_local = calculCourse12Time(second_local_time, number_of_class);
+            var format_local_zome_time = getZoneLocalTime(str_get_country, second_local_time);
+            var system_time_france = moment(format_local_zome_time).format("YYYY/MM/DD HH:mm:ss");
+            var getdata_series = $('#series_select').val() || '未填写';
+            var getdata_level = $('#level_select').val() || '未填写';
+            var getdata_numclass = $('#set_select').val() || '未填写';
+
+            for (var i = 0; i < list_course_local.length; i++) {
+                var format_local_zome_time = getZoneLocalTime(str_get_country, list_course_local[i]);
+                list_course_france.push(Date.parse(moment(format_local_zome_time).format("YYYY/MM/DD HH:mm:ss")));
+            }
+            var data = {
+                user_student: student_select,
+                user_teacher: teacher_select,
+                student_schedule: list_course_local,
+                teacher_schedule: list_course_france,
+                getdata_series: getdata_series,
+                getdata_level: getdata_level,
+                getdata_numclass: getdata_numclass,
+                number_class: number_of_class
+            };
+            $.ajax({
+                type: "POST",
+                url: "/admin/controlClass/data",
+                data: data,
+                success: function(data) {
+                    alert("成功");
+                    window.location = "/admin/controlClass";
+                }
+            });
+        });
+    });
+
+    function calculCourse12Time(second_local_time, num) {
+        var result_second_course_list = [];
+        var length = parseInt(num);
+        var factor = 1000 * 60 * 60 * 24 * 7;
+        for (var num_course = 0; num_course < length; num_course++) {
+            var second_class = factor * num_course + second_local_time;
+            result_second_course_list.push(second_class);
+            var format_local_zome_time = getZoneLocalTime("美国东部", result_second_course_list[num_course]);
+            alert("美国:" + format_local_zome_time);
+        }
+        return result_second_course_list;
+    }
+
+    function getZoneLocalTime(str_zone, target_time) {
+        var result_zone;
+        switch (str_zone) {
+            case '中国':
+                var local_hour = -7;
+                var change2hour = local_hour * 60 * 60 * 1000;
+                var second_localtime = moment(target_time) + change2hour;
+                console.log("当地时间秒数: " + second_localtime);
+                result_zone = moment(second_localtime).tz("Asia/Shanghai").format();
+                console.log('中国时间:' + result_zone);
+                break;
+            case '美国东部':
+                var local_hour = 6;
+                var change2hour = local_hour * 60 * 60 * 1000;
+                var second_localtime = moment(target_time) + change2hour;
+                console.log("当地时间秒数: " + second_localtime);
+                result_zone = moment(second_localtime).tz("America/New_York").format();
+                console.log('美国东部:' + result_zone);
+                break;
+            case '美国中部':
+                var local_hour = 7;
+                var change2hour = local_hour * 60 * 60 * 1000;
+                var second_localtime = moment(target_time) + change2hour;
+                console.log("当地时间秒数: " + second_localtime);
+                result_zone = moment(second_localtime).tz("America/Chicago").format();
+                console.log('美国中部:' + result_zone);
+                break;
+            case '美国山地地区':
+                var local_hour = 8;
+                var change2hour = local_hour * 60 * 60 * 1000;
+                var second_localtime = moment(target_time) + change2hour;
+                console.log("当地时间秒数: " + second_localtime);
+                result_zone = moment(second_localtime).tz("America/Denver").format();
+                console.log('美国山地地区:' + result_zone);
+                break;
+            case '美国太平洋':
+                var local_hour = 9;
+                var change2hour = local_hour * 60 * 60 * 1000;
+                var second_localtime = moment(target_time) + change2hour;
+                console.log("当地时间秒数: " + second_localtime);
+                result_zone = moment(second_localtime).tz("America/Los_Angeles").format();
+                console.log('美国太平洋:' + result_zone);
+                break;
+            case '英国':
+                var local_hour = 1;
+                var change2hour = local_hour * 60 * 60 * 1000;
+                var second_localtime = moment(target_time) + change2hour;
+                console.log("当地时间秒数: " + second_localtime);
+                result_zone = moment(second_localtime).tz("Europe/London").format();
+                console.log('英国:' + result_zone);
+                break;
+            case '澳大利亚':
+                var local_hour = -10;
+                var change2hour = local_hour * 60 * 60 * 1000;
+                var second_localtime = moment(target_time) + change2hour;
+                console.log("当地时间秒数: " + second_localtime);
+                result_zone = moment(second_localtime).tz("Australia/Sydney").format();
+                console.log('澳大利亚' + result_zone);
+                break;
+            case '法国':
+                result_zone = moment(target_time).tz("Europe/Paris").format();
+                console.log('法国' + result_zone);
+                break;
+            default:
+                result_zone = moment(target_time).tz("Europe/Paris").format();
+                console.log('法国' + result_zone);
+                break;
+        }
+        return result_zone;
+    }
+
+    function calculZoneLocalTime(str_zone, target_time) {
+        var result_zone;
+        switch (str_zone) {
+            case '中国':
+                var second_localtime = moment(target_time);
+                console.log("当地时间秒数: " + second_localtime);
+                result_zone = moment(second_localtime).tz("Asia/Shanghai").format();
+                console.log('中国时间:' + result_zone);
+                break;
+            case '美国东部':
+                var second_localtime = moment(target_time);
+                console.log("当地时间秒数: " + second_localtime);
+                result_zone = moment(second_localtime).tz("America/New_York").format();
+                console.log('美国东部:' + result_zone);
+                break;
+            case '美国中部':
+                var second_localtime = moment(target_time);
+                console.log("当地时间秒数: " + second_localtime);
+                result_zone = moment(second_localtime).tz("America/Chicago").format();
+                console.log('美国中部:' + result_zone);
+                break;
+            case '美国山地地区':
+                var second_localtime = moment(target_time);
+                console.log("当地时间秒数: " + second_localtime);
+                result_zone = moment(second_localtime).tz("America/Denver").format();
+                console.log('美国山地地区:' + result_zone);
+                break;
+            case '美国太平洋':
+                var second_localtime = moment(target_time);
+                console.log("当地时间秒数: " + second_localtime);
+                result_zone = moment(second_localtime).tz("America/Los_Angeles").format();
+                console.log('美国太平洋:' + result_zone);
+                break;
+            case '英国':
+                var second_localtime = moment(target_time);
+                console.log("当地时间秒数: " + second_localtime);
+                result_zone = moment(second_localtime).tz("Europe/London").format();
+                console.log('英国:' + result_zone);
+                break;
+            case '澳大利亚':
+                var second_localtime = moment(target_time);
+                console.log("当地时间秒数: " + second_localtime);
+                result_zone = moment(second_localtime).tz("Australia/Sydney").format();
+                console.log('澳大利亚' + result_zone);
+                break;
+            case '法国':
+                result_zone = moment(target_time).tz("Europe/Paris").format();
+                console.log('法国' + result_zone);
+                break;
+            default:
+                result_zone = moment(target_time).tz("Europe/Paris").format();
+                console.log('法国' + result_zone);
+                break;
+        }
+        return result_zone;
+    }
+
+    function LoadCourse() {
+        document.getElementById("series_select").addEventListener("change", function() {
+            $("#type_level").empty();
+            $('#type_level').append(
+                '<div class="input-group"><label for="level_select">选择等级</label><select style="margin-bottom:20px;" class="six columns half form" id="level_select"></select></div>'
+            );
+            let get_series = $('#series_select').val() || '未填写';
+            $.ajax({
+                type: "GET",
+                url: "/admin/controlClass/level?series=" + get_series,
+                success: function(data) {
+                    $("level_select").empty();
+                    $("<option/>").attr({
+                        "value": 0,
+                        "disabled": true,
+                        "selected": true
+                    }).appendTo('#level_select').html("请选择哪个等级");
+                    for (var i = 0; i < data.length; i++) {
+                        $("<option/>").attr({
+                            "value": data[i],
+                            "id": "level_" + data[i],
+                        }).appendTo('#level_select');
+                        if (data[i] == "level1") {
+                            $("#level_" + data[i]).html(data[i] + "(适合4-5岁)");
+                        } else if (data[i] == "level2") {
+                            $("#level_" + data[i]).html(data[i] + "(适合5-6岁)");
+                        } else if (data[i] == "level3") {
+                            $("#level_" + data[i]).html(data[i] + "(适合7-8岁)");
+                        } else if (data[i] == "level4") {
+                            $("#level_" + data[i]).html(data[i] + "(适合8-9岁)");
+                        } else if (data[i] == "level5") {
+                            $("#level_" + data[i]).html(data[i] + "(适合9-11岁)");
+                        } else {
+                            $("#level_" + data[i]).html(data[i]);
+                        }
+                    }
+                }
+            });
+        });
+        document.getElementById("type_level").addEventListener("change", function() {
+            $("#type_set").empty();
+            $('#type_set').append(
+                '<div class="input-group"><label for="set_select">选择哪套课</label><select style="margin-bottom:20px;" class="six columns half form" id="set_select"></select></div>'
+            );
+            let get_level_val = $('#level_select').val() || '未填写';
+            let get_series = $('#series_select').val() || '未填写';
+            $.ajax({
+                type: "GET",
+                url: "/admin/controlClass/set?level=" + get_level_val + "&series=" + get_series,
+                success: function(data) {
+                    $("#set_select").empty();
+                    $("<option/>").attr({
+                        "value": 0,
+                        "disabled": true,
+                        "selected": true
+                    }).appendTo('#set_select').html("请选择哪一套");
+                    for (var i = 0; i < data.length; i++) {
+                        $("<option/>").attr({
+                            "value": data[i],
+                            "id": "set_" + data[i],
+                        }).appendTo('#set_select');
+                        $("#set_" + data[i]).html(data[i]);
+                    }
+                }
+            });
+        });
+    }
+
+    function myFunction() {
+        var student_select = $('#student_select').val() || '未填写';
+        var zone_time_list = <%- JSON.stringify(zone_time_list)%>;
+        var user_schedule = $("#teacher_select").val();
+        var data_second = <%- JSON.stringify(schedule_data)%>;
+        $("#schedule_teacher").empty();
+        //alert(data_time[name_schedule]);
+        for (var key in data_second[user_schedule]) {
+            console.log(key);
+            let current_date = Date.now();
+            if (current_date < key) {
+                let format_local_zome_time = MiSecod2Format(key);
+                let millseconds_date = new Date(parseInt(key));
+                var date_format = timeWeekFormat(millseconds_date);
+                $('#schedule_teacher').append('<li class="list_schedule" style="margin:0px;padding:0px;">' + date_format + " - 学生: " + data_second[user_schedule][key] + '</li>');
+                $('#schedule_teacher').append('<li class="list_schedule_local" style="color:#2EAED5; font-size:14px;margin-bottom:10px;">' + "地区|" + zone_time_list[student_select] + ":" + format_local_zome_time + '</li>');
+            }
+        }
+        // document.getElementById("schedule_teacher").innerHTML = $("#teacher_select").val();
+    }
+    //常用版本
+    function MiSecod2Format(mil_second) {
+        let date = new Date(parseInt(mil_second));
+        return date.getFullYear() + "年" + (date.getMonth() < 10 ? '0' + (date.getMonth() + 1) : (date.getMonth() + 1)) + "月" + (date.getDate() < 10 ? '0' + date.getDate() + "日 " : date.getDate() + "日 ") + (date.getHours() < 10 ? '0' + date.getHours() + "点" : date.getHours() + "点");
+    }
+
+    function timeWeekFormat(times) {
+        //定义一个日期对象;
+        var dateTime = new Date(times);
+        //获得系统年份;
+        var year = dateTime.getFullYear();
+        //获得系统月份;
+        var month = dateTime.getMonth() + 1;
+        //获得系统当月分天数;
+        var day = dateTime.getDate();
+        //获得系统小时;
+        var hours = dateTime.getHours();
+        //获得系统分钟;
+        var minutes = dateTime.getMinutes();
+        //获得系统秒数;
+        var second = dateTime.getSeconds();
+        //获得系统星期几;
+        var dayCycle = dateTime.getDay();
+        //使用数组更改日期样式;
+        var dayCycleArray = ["日", "一", "二", "三", "四", "五", "六"];
+        for (var i = 0; i < 7; i++) {
+            if (dayCycle == i) {
+                //将dayCycleArray的数赋值到系统星期几里面中去;
+                dayCycle = dayCycleArray[i];
+            }
+        }
+        month < 10 ? month = '0' + month : month;
+        hours < 10 ? hours = '0' + hours : hours;
+        minutes < 10 ? minutes = '0' + minutes : minutes;
+        second < 10 ? second = '0' + second : second;
+        //打印完整的系统日期;
+        let dateStr = year + '/' + month + '/' + day + ' ' + '星期' + dayCycle + ' ' + hours + ':' + minutes + ':' + second;
+        return dateStr;
+    }
+
+    function formatSeconds(value) {
+        var theTime = parseInt(value); // 需要转换的时间秒 
+        var theTime1 = 0; // 分 
+        var theTime2 = 0; // 小时 
+        var theTime3 = 0; // 天
+        if (theTime > 60) {
+            theTime1 = parseInt(theTime / 60);
+            theTime = parseInt(theTime % 60);
+            if (theTime1 > 60) {
+                theTime2 = parseInt(theTime1 / 60);
+                theTime1 = parseInt(theTime1 % 60);
+                if (theTime2 > 24) {
+                    //大于24小时
+                    theTime3 = parseInt(theTime2 / 24);
+                    theTime2 = parseInt(theTime2 % 24);
+                }
+            }
+        }
+        var result = '';
+        if (theTime > 0) {
+            result = "" + parseInt(theTime) + "秒";
+        }
+        if (theTime1 > 0) {
+            result = "" + parseInt(theTime1) + "分" + result;
+        }
+        if (theTime2 > 0) {
+            result = "" + parseInt(theTime2) + "小时" + result;
+        }
+        if (theTime3 > 0) {
+            result = "" + parseInt(theTime3) + "天" + result;
+        }
+        return result;
+    }
+</script>

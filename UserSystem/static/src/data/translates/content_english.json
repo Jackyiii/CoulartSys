@@ -1,0 +1,35 @@
+[
+{
+	"student":"student login",
+	"teacher":"teacher login",
+	"assistant":"assistant login",
+	"coulart_aller_1":"look around",
+	"coulart_aller_2":">>>go the coulart forum",
+	"tel_fr":"+33 6 45 51 09 68",
+	"tel_ch":"+86 150 6407 9056",
+	"path" : "final"
+},
+{
+	"student_login":"student login",
+	"teacher_login":"teacher login",
+	"assistant_login":"assistant login",
+	"input_email":"email",
+	"input_password":"password",
+	"btn_login":"login",
+	"btn_forgotpassword":">>>forgot password<<<",
+	"btn_sign":"sign",
+	"path" : "final"
+},
+{
+	"title":"欢迎来到谷乐艺术",
+	"path" : "final"
+},
+{
+	"special1Title":"国际视野",
+	"path" : "final"
+},
+{
+	"nav_btn_contact":"联系我们",
+	"path" : "final"
+}
+]

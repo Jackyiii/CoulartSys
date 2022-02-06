@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <%- include ("../component/meta_config"); -%>
+        <link rel="stylesheet" type="text/css" href="/css/index.css">
+        <script type="text/javascript" src="/scripts/admin/index_admin.js"></script>
+</head>
+
+
+<body>
+    <div id="index">
+    </div>
+    <div id="nav">
+        <div id="profil">
+            <div class="circular-portrait">
+                <img id="profil_personal" src="" alt="">
+            </div>
+            <ul id="info_personal">
+                <li class="name_user">
+                    <%=user["name"]%>
+                </li>
+                <li id="niveau">管理员
+                    <%=user["id"]%>
+                </li>
+            </ul>
+        </div>
+        <ul id="list_menu">
+            <li id="coulart_genius_sign" class="menu_personal" style="color:white;">教研注册</li>
+            <li id="stu_sign" class="menu_personal" style="color:white;">学生注册</li>
+            <li id="arrange_class" class="menu_personal" style="color:white;">课程安排</li>
+            <li id="manage_stu" class="menu_personal" style="color:white;">学生管理</li>
+            <li id="manage_coulart_genius" class="menu_personal" style="color:white;">Coulart职员管理</li>
+        </ul>
+
+    </div>
+    <div>
+        <img id="background_personal" src="" alt="">
+    </div>
+    <div id="container_content">
+        <%if(url_path=="geniusSignIn"){%>
+            <%- include ("../component/genius_sign"); -%>
+                <%}else if(url_path=="studentSign"){%>
+                    <%- include ("../component/student_sign"); -%>
+                        <%}else if(url_path=="controlClass"){%>
+                            <%- include ("../component/control_class"); -%>
+                                <%}else if(url_path=="manageStudent"){%>
+                                    <%- include ("../admin/manage_student"); -%>
+                                        <%}else if(url_path=="manageGenius"){%>
+                                            <%- include ("../admin/manage_genius"); -%>
+                                                <%}%>
+    </div>
+
+</body>
+
+</html>

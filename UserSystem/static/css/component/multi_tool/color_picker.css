@@ -1,0 +1,158 @@
+@media screen and (max-width: 600px) {
+    /* The container of each option */
+    .color-option {
+        display: inline;
+        position: relative;
+        margin: 5px 15px 5px 15px;
+        cursor: pointer;
+        -webkit-user-select: none;
+        -moz-user-select: none;
+        -ms-user-select: none;
+        user-select: none;
+    }
+    /* The container of all options */
+    .color-picker {
+        margin: 10px 0px 10px 0px;
+        position: absolute;
+        right: 0px;
+        top: 0px;
+        z-index: 10000;
+    }
+    /* Hide the browser's default radio button */
+    .color-option input {
+        position: absolute;
+        opacity: 0;
+        cursor: pointer;
+    }
+    /* Create a custom radio button */
+    .checkmark {
+        position: absolute;
+        top: 0;
+        left: 0;
+        height: 25px;
+        width: 25px;
+        border-radius: 50%;
+        border: 1px solid #e6e3e3;
+    }
+    /* Style the indicator (dot/circle) when checked */
+    .color-option input:checked~.checkmark {
+        margin-right: 5px;
+        box-shadow: 0 0 5px rgba(81, 203, 238, 1);
+        padding: 3px 0px 3px 3px;
+        border: 1px solid rgba(81, 203, 238, 1);
+    }
+    /* Style the indicator (dot/circle) */
+    .color-option .checkmark:after {
+        top: 9px;
+        left: 9px;
+        width: 8px;
+        height: 8px;
+        border-radius: 50%;
+    }
+}
+
+@media screen and (min-width: 600px) and (max-width: 960px) {
+    /* The container of each option */
+    .color-option {
+        display: inline;
+        position: relative;
+        margin: 5px 15px 5px 15px;
+        cursor: pointer;
+        -webkit-user-select: none;
+        -moz-user-select: none;
+        -ms-user-select: none;
+        user-select: none;
+    }
+    /* The container of all options */
+    .color-picker {
+        margin: 10px 0px 10px 0px;
+        position: absolute;
+        left: 0px;
+        top: 0px;
+        z-index: 10000;
+    }
+    /* Hide the browser's default radio button */
+    .color-option input {
+        position: absolute;
+        opacity: 0;
+        cursor: pointer;
+    }
+    /* Create a custom radio button */
+    .checkmark {
+        position: absolute;
+        top: 0;
+        left: 0;
+        height: 25px;
+        width: 25px;
+        border-radius: 50%;
+        border: 1px solid #e6e3e3;
+    }
+    /* Style the indicator (dot/circle) when checked */
+    .color-option input:checked~.checkmark {
+        margin-right: 5px;
+        box-shadow: 0 0 5px rgba(81, 203, 238, 1);
+        padding: 3px 0px 3px 3px;
+        border: 3px solid rgba(81, 203, 238, 1);
+    }
+    /* Style the indicator (dot/circle) */
+    .color-option .checkmark:after {
+        top: 9px;
+        left: 9px;
+        width: 10px;
+        height: 10px;
+        border-radius: 50%;
+    }
+}
+
+@media screen and (min-width: 960px) {
+    /* The container of each option */
+    .color-option {
+        display: inline;
+        position: relative;
+        margin: 5px 15px 5px 15px;
+        cursor: pointer;
+        -webkit-user-select: none;
+        -moz-user-select: none;
+        -ms-user-select: none;
+        user-select: none;
+    }
+    /* The container of all options */
+    .color-picker {
+        margin: 10px 0px 10px 0px;
+        position: absolute;
+        left: 0px;
+        top: 0px;
+        z-index: 10000;
+    }
+    /* Hide the browser's default radio button */
+    .color-option input {
+        position: absolute;
+        opacity: 0;
+        cursor: pointer;
+    }
+    /* Create a custom radio button */
+    .checkmark {
+        position: absolute;
+        top: 0;
+        left: 0;
+        height: 25px;
+        width: 25px;
+        border-radius: 50%;
+        border: 1px solid #e6e3e3;
+    }
+    /* Style the indicator (dot/circle) when checked */
+    .color-option input:checked~.checkmark {
+        margin-right: 5px;
+        box-shadow: 0 0 5px rgba(81, 203, 238, 1);
+        padding: 3px 0px 3px 3px;
+        border: 3px solid rgba(81, 203, 238, 1);
+    }
+    /* Style the indicator (dot/circle) */
+    .color-option .checkmark:after {
+        top: 9px;
+        left: 9px;
+        width: 10px;
+        height: 10px;
+        border-radius: 50%;
+    }
+}

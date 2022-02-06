@@ -1,0 +1,31 @@
+<!-- Tool of Regulate Camera Component -->
+<link rel="stylesheet" type="text/css" href="/css/component/multi_tool/regulate_camera.css">
+<link rel="stylesheet" type="text/css" href="/css/component/multi_tool/bubbly.css">
+<div id="panel_tranform">
+    <ul id="transform_angle">
+        <li class="text_regualte">调整角度</li>
+        <li>
+            <input type="range" min="0" max="2000" value="2000" step="1" id="range_angle">
+        </li>
+        <li id="showVal"> 2000px </li>
+    </ul>
+    <ul id="transform_scale">
+        <li class="text_regualte">调整大小</li>
+        <li>
+            <input type="range" min="0" max="4" value="1" step="0.05" id="range_scale">
+        </li>
+        <li id="showVal_Scale"> 1.5</li>
+    </ul>
+    <ul id="transform_position">
+        <li class="text_regualte">调整位置</li>
+        <li>
+            <input type="range" min="-100" max="500" value="0" step="2" id="range_position">
+        </li>
+        <li id="showVal_Position">0</li>
+    </ul>
+    <div id="fini_transform">
+        <button class="bubbly-button">完成</button>
+    </div>
+</div>
+<script async src="/scripts/component/multi_tool/bubbly.js" type="text/javascript"></script>
+<script async src="/scripts/component/multi_tool/script.js" type="text/javascript"></script>

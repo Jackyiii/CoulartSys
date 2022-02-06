@@ -1,0 +1,108 @@
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+    font-size: 16px;
+}
+
+html,
+body,
+.container,
+.row {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    height: 100%;
+}
+
+.container {
+    max-width: 100%;
+}
+
+button {
+    font-size: 16px;
+}
+
+.half {
+    position: fixed;
+    margin: 0;
+    width: 50% !important;
+    height: 100%;
+}
+
+.form {
+    left: 50%;
+    overflow: auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+h1,
+form {
+    width: 100%;
+}
+
+h1 {
+    padding-top: 10px;
+    text-align: center;
+    color: #e7b718;
+    font-weight: bold;
+}
+
+form {
+    margin-right: auto;
+    margin-left: auto;
+    max-width: 400px;
+}
+
+.input-group {
+    margin-bottom: 30px;
+}
+
+.radio-group label {
+    display: inline-block;
+}
+
+label {
+    color: #e7b718;
+}
+
+input {
+    color: #e7b718;
+}
+
+::-webkit-input-placeholder {
+    color: #dfd0a0;
+}
+
+ :-moz-placeholder {
+    /* Firefox 18- */
+    color: #dfd0a0;
+}
+
+ ::-moz-placeholder {
+    /* Firefox 19+ */
+    color: #dfd0a0;
+}
+
+ :-ms-input-placeholder {
+    color: #dfd0a0;
+}
+
+textarea {
+    min-height: 100px;
+}
+
+@media screen and (max-width: 1024px) {
+    .half {
+        position: static;
+        width: 100% !important;
+        height: auto;
+    }
+    form {
+        padding-right: 12px;
+        padding-left: 12px;
+    }
+}

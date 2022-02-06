@@ -1,0 +1,136 @@
+<link rel="canonical" href="https://letswrite.tw/custom-google-form/">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/skeleton/2.0.4/skeleton.min.css">
+<link rel="stylesheet" href="/css/admin/component/manage_stu.css">
+<main class="row">
+    <section class="six columns half form">
+        <h1 style="font-size: 20px;">学生管理系统</h1>
+        <form id="form_stu_manage">
+            <div class="input-group">
+                <label for="manage_student_select">选择学生</label>
+                <select class="u-full-width" id="manage_student_select">
+                        <option value="0"  selected disabled>请选择</option>
+                        <% user_student_list.forEach(function(item){%>
+                            <option value="<%=item.user %>"><%=item.user %></option>
+                        <% }) %>
+                    </select>
+            </div>
+        </form>
+    </section>
+    <section class="six columns half form">
+        <form id="look_manage_student"></form>
+    </section>
+</main>
+
+
+<script>
+    document.getElementById("manage_student_select").addEventListener("change", function() {
+        let getUsr = $('#manage_student_select').val() || '未填写';
+        $.ajax({
+            type: "GET",
+            url: "/admin/manageStudent/getUser?user=" + getUsr,
+            success: function(data) {
+                $("#look_manage_student").empty();
+                //姓名
+                $('#look_manage_student').append(
+                    '<div class="input-group"><label for="get_user_infos_name">姓名</label><input class="u-full-width" type="text" name="get_user_infos_name" id="get_user_infos_name" readonly></div>'
+                );
+                //uid
+                $('#look_manage_student').append(
+                    '<div class="input-group"><label for="get_user_infos_uid">user id</label><input class="u-full-width" type="text" name="get_user_infos_uid" id="get_user_infos_uid" readonly></div>'
+                );
+                //gender
+                $('#look_manage_student').append(
+                    '<div class="input-group"><label for="get_user_infos_gender">性别</label><input class="u-full-width" type="text" name="get_user_infos_gender" id="get_user_infos_gender" readonly></div>'
+                );
+                //age
+                $('#look_manage_student').append(
+                    '<div class="input-group"><label for="get_user_infos_age">年龄</label><input class="u-full-width" type="text" name="get_user_infos_age" id="get_user_infos_age" readonly></div>'
+                );
+                //sudent email
+                $('#look_manage_student').append(
+                    '<div class="input-group"><label for="get_user_infos_stu_email">学生邮箱</label><input class="u-full-width" type="text" name="get_user_infos_stu_email" id="get_user_infos_stu_email" readonly></div>'
+                );
+                //sudent tel
+                $('#look_manage_student').append(
+                    '<div class="input-group"><label for="get_user_infos_stu_tel">学生电话</label><input class="u-full-width" type="text" name="get_user_infos_stu_tel" id="get_user_infos_stu_tel" readonly></div>'
+                );
+                //sudent resident country
+                $('#look_manage_student').append(
+                    '<div class="input-group"><label for="get_user_infos_resident_country">居住国家</label><input class="u-full-width" type="text" name="get_user_infos_resident_country" id="get_user_infos_resident_country" readonly></div>'
+                );
+                //sudent zone time
+                $('#look_manage_student').append(
+                    '<div class="input-group"><label for="get_user_infos_zone_time">时区</label><input class="u-full-width" type="text" name="get_user_infos_zone_time" id="get_user_infos_zone_time" readonly></div>'
+                );
+                //sudent birth
+                $('#look_manage_student').append(
+                    '<div class="input-group"><label for="get_user_birth">出生年月</label><input class="u-full-width" type="text" name="get_user_birth" id="get_user_birth" readonly></div>'
+                );
+                //sudent character
+                $('#look_manage_student').append(
+                    '<div class="input-group"><label for="get_user_character">学生性格情况</label><input class="u-full-width" type="text" name="get_user_character" id="get_user_character" readonly></div>'
+                );
+                //sudent language
+                $('#look_manage_student').append(
+                    '<div class="input-group"><label for="get_user_language">学生语言情况</label><textarea cols="50" name="get_user_language" id="get_user_language" readonly></textarea></div>'
+                );
+                //sudent interest
+                $('#look_manage_student').append(
+                    '<div class="input-group"><label for="get_user_interest">学生兴趣爱好</label><input class="u-full-width" type="text" name="get_user_interest" id="get_user_interest" readonly></div>'
+                );
+                //sudent painter age
+                $('#look_manage_student').append(
+                    '<div class="input-group"><label for="get_user_painter">学生绘画年龄</label><input class="u-full-width" type="text" name="get_user_painter" id="get_user_painter" readonly></div>'
+                );
+                //sudent addresse
+                $('#look_manage_student').append(
+                    '<div class="input-group"><label for="get_user_addr">学生居住地址</label><input class="u-full-width" type="text" name="get_user_addr" id="get_user_addr" readonly></div>'
+                );
+                //sudent other situation
+                $('#look_manage_student').append(
+                    '<div class="input-group"><label for="get_user_other">学生其他情况</label><input class="u-full-width" type="text" name="get_user_other" id="get_user_other" readonly></div>'
+                );
+                //guarder name
+                $('#look_manage_student').append(
+                    '<div class="input-group"><label for="get_guarder_name">监护人姓名</label><input class="u-full-width" type="text" name="get_guarder_name" id="get_guarder_name" readonly></div>'
+                );
+                //guarder email
+                $('#look_manage_student').append(
+                    '<div class="input-group"><label for="get_guarder_email">监护人邮箱</label><input class="u-full-width" type="text" name="get_guarder_email" id="get_guarder_email" readonly></div>'
+                );
+                //guarder tel
+                $('#look_manage_student').append(
+                    '<div class="input-group"><label for="get_guarder_tel">监护人电话</label><input class="u-full-width" type="text" name="get_guarder_tel" id="get_guarder_tel" readonly></div>'
+                );
+                //guarder social
+                $('#look_manage_student').append(
+                    '<div class="input-group"><label for="get_guarder_social">监护人社交媒体</label><input class="u-full-width" type="text" name="get_guarder_social" id="get_guarder_social" readonly></div>'
+                );
+
+                $("#get_user_infos_name").val(data.student_first_name + " " + data.student_last_name);
+                $("#get_user_infos_uid").val(data.uid);
+                $("#get_user_infos_gender").val(data.student_sex);
+                $("#get_user_infos_age").val(data.student_age);
+                $("#get_user_infos_stu_email").val(data.student_mail);
+                $("#get_user_infos_stu_tel").val(data.student_tel);
+                $("#get_user_infos_resident_country").val(data.student_resident_country);
+                $("#get_user_infos_zone_time").val(data.zone_time);
+                $("#get_user_birth").val(data.student_year + "/" + data.student_month + "/" + data.student_day);
+                $("#get_user_character").val(data.student_character);
+                $("#get_user_language").val("英文: " + data.student_en + '\n' + "法语:" + data.student_fr + '\n' + "中文:" + data.student_ch);
+                $("#get_user_interest").val(data.student_point_interest);
+                $("#get_user_painter").val(data.student_education_select);
+                $("#get_user_addr").val(data.student_addr_resident);
+                $("#get_user_other").val(data.student_remark);
+                $("#get_guarder_name").val(data.guarder_name + "/" + data.student_relation);
+                $("#get_guarder_email").val(data.guarder_mail);
+                $("#get_guarder_tel").val(data.guarder_tel);
+                $("#get_guarder_social").val("facebook" + data.guarder_facebook + "/ wechat:" + data.guarder_wechat);
+            }
+        });
+    });
+</script>
+
+</body>
+
+</html>

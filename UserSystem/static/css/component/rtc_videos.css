@@ -1,0 +1,218 @@
+@import url("/css/component/config/config_general.css");
+@media screen and (max-width: 600px) {
+    .grandVideo {
+        position: fixed;
+        width: 100%;
+        left: 0px;
+        top: 0px;
+        z-index: 1;
+        margin: 0px;
+        padding: 0px;
+        /* transform-origin: 50% 50% 50%;
+        transform-origin: center; */
+        overflow: hidden;
+        transform: scale(1.5, 1.5);
+        perspective-origin: center center;
+        -moz-perspective-origin: center center;
+        -webkit-perspective-origin: center center;
+    }
+    .grandVideo video {
+        height: auto;
+        position: relative !important;
+        transform: matrix();
+        /* transform-origin: 0 0; */
+        transform-origin: 50% 50% 50%;
+        transform-origin: center;
+    }
+    #remote-container {
+        border: 10px solid yellow;
+    }
+    #me {
+        border: 10px solid blue;
+    }
+    .smallVideo video {
+        height: auto;
+        position: relative !important;
+    }
+    .smallVideo {
+        width: 20%;
+        position: absolute;
+        z-index: 10000;
+        cursor: move;
+        height: auto !important;
+        left: 0px;
+        top: 0px;
+        margin: 0px;
+        padding: 0px;
+        transform-origin: 50% 50% 50%;
+        transform-origin: center;
+        overflow: hidden;
+        transform: scale(1.5, 1.5);
+        perspective-origin: center center;
+        -moz-perspective-origin: center center;
+        -webkit-perspective-origin: center center;
+    }
+}
+
+@media screen and (min-width: 600px) and (max-width: 960px) {
+    .grandVideo {
+        position: fixed;
+        width: 100%;
+        left: 0px;
+        top: 0px;
+        z-index: 1;
+        margin: 0px;
+        padding: 0px;
+        transform-origin: 50% 50% 50%;
+        transform-origin: center;
+        overflow: hidden;
+        transform: scale(1.5, 1.5);
+        perspective-origin: center center;
+        -moz-perspective-origin: center center;
+        -webkit-perspective-origin: center center;
+    }
+    .grandVideo video {
+        height: auto;
+        position: relative !important;
+        transform: matrix();
+        transform-origin: 0 0;
+    }
+    #remote-container {
+        border: 10px solid yellow;
+    }
+    #me {
+        border: 10px solid blue;
+    }
+    .smallVideo video {
+        height: auto;
+        position: relative !important;
+    }
+    .smallVideo {
+        width: 20%;
+        position: absolute;
+        z-index: 10000;
+        cursor: move;
+        height: auto !important;
+        left: 0px;
+        top: 0px;
+        margin: 0px;
+        padding: 0px;
+        transform-origin: 50% 50% 50%;
+        transform-origin: center;
+        overflow: hidden;
+        transform: scale(1.5, 1.5);
+        perspective-origin: center center;
+        -moz-perspective-origin: center center;
+        -webkit-perspective-origin: center center;
+    }
+    /* #player_3310001 {
+        perspective: 144px;
+        border: 10px solid green;
+    } */
+    /* #player_3310001 {
+        perspective: 2000px;
+        transform-origin: 50% 50% 50%;
+        transform-origin: center;
+        overflow: hidden;
+        transform: scale(1.5, 1.5);
+        perspective-origin: center center;
+        -moz-perspective-origin: center center;
+        -webkit-perspective-origin: center center;
+    }
+    #video3310001 {
+        transform: rotateX(45deg);
+    } */
+}
+
+@media screen and (min-width: 960px) {
+    .grandVideo {
+        position: fixed;
+        width: 100%;
+        left: 0px;
+        top: 0px;
+        z-index: 1;
+        margin: 0px;
+        padding: 0px;
+        transform-origin: 50% 50% 50%;
+        transform-origin: center;
+        overflow: hidden;
+        transform: scale(1.5, 1.5);
+        perspective-origin: center center;
+        -moz-perspective-origin: center center;
+        -webkit-perspective-origin: center center;
+    }
+    .grandVideo video {
+        height: auto;
+        position: relative !important;
+        transform: matrix();
+        transform-origin: 0 0;
+    }
+    #remote-container {
+        border: 10px solid yellow;
+    }
+    #me {
+        border: 10px solid blue;
+    }
+    .smallVideo video {
+        height: auto;
+        position: relative !important;
+    }
+    .smallVideo {
+        width: 20%;
+        position: absolute;
+        z-index: 10000;
+        cursor: move;
+        height: auto !important;
+        left: 0px;
+        top: 0px;
+        margin: 0px;
+        padding: 0px;
+        transform-origin: 50% 50% 50%;
+        transform-origin: center;
+        overflow: hidden;
+        transform: scale(1.5, 1.5);
+        perspective-origin: center center;
+        -moz-perspective-origin: center center;
+        -webkit-perspective-origin: center center;
+    }
+}
+
+
+/* #view3d_remote {
+        width: 40%;
+        height: 100vh;
+        border: 4px solid orange;
+        margin: 0px;
+        padding: 0px;
+        transform-origin: 50% 50% 50%;
+        transform-origin: center;
+        overflow: hidden;
+        transform: scale(1.5, 1.5);
+        perspective-origin: center center;
+        -moz-perspective-origin: center center;
+        -webkit-perspective-origin: center center;
+    } */
+
+
+/* #remote_video {
+    display: none;
+    width: 100%;
+    border: 5px solid green;
+    position: absolute;
+    z-index: 100;
+} */
+
+
+/* #remote_video_container {
+        width: 100%;
+        height: auto;
+        margin: 0px;
+        padding: 0px;
+        overflow: hidden;
+        position: absolute;
+        z-index: 200;
+        right: 0px;
+        top: 0px;
+        border: 5px solid red;
+        transform: rotateX(45deg);
+    } */
